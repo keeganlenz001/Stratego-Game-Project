@@ -1,3 +1,49 @@
+<!-- <!DOCTYPE HTML>
+<html>
+<head>
+<style>
+.droptarget {
+  float: left; 
+  width: 100px; 
+  height: 35px;
+  margin: 15px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+}
+
+</style>
+</head>
+<body>
+
+<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <p ondragstart="dragStart(event)" draggable="true" id="dragtarget">Drag me!</p>
+</div>
+
+<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+<p id="demo"></p>
+
+<script>
+function dragStart(event) {
+  event.dataTransfer.setData("Text", event.target.id);
+}
+
+
+
+function allowDrop(event) {
+  event.preventDefault();
+}
+
+function drop(event) {
+  event.preventDefault();
+  var data = event.dataTransfer.getData("Text");
+  event.target.appendChild(document.getElementById(data));
+}
+</script>
+
+</body>
+</html> -->
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -158,7 +204,7 @@
 
 
 <div class="chessboard">
-
+<!-- row 1 -->
 <div class="white"></div>
 <div class="black"></div>
 <div class="white"></div>
@@ -170,6 +216,7 @@
 <div class="white"></div>
 <div class="black"></div>
 
+<!--row 2-->
 <div class="black"></div>
 <div class="white"></div>
 <div class="black"></div>
@@ -181,6 +228,7 @@
 <div class="black"></div>
 <div class="white"></div>
 
+<!--row 3--> 
 <div class="white"></div>
 <div class="black"></div>
 <div class="white"></div>
@@ -192,6 +240,7 @@
 <div class="white"></div>
 <div class="black"></div>
 
+<!--row 4-->
 <div class="black"></div>
 <div class="white"></div>
 <div class="black"></div>
@@ -203,6 +252,31 @@
 <div class="black"></div>
 <div class="white"></div>
 
+<!--row 5-->
+<div class="white"></div>
+<div class="black"></div>
+<div class="blue"></div>
+<div class="blue"></div>
+<div class="white"></div>
+<div class="black"></div>
+<div class="blue"></div>
+<div class="blue"></div>
+<div class="white"></div>
+<div class="black"></div>
+
+<!--row 6-->
+<div class="black"></div>
+<div class="white"></div>
+<div class="blue"></div>
+<div class="blue"></div>
+<div class="black"></div>
+<div class="white"></div>
+<div class="blue"></div>
+<div class="blue"></div>
+<div class="black"></div>
+<div class="white"></div>
+
+<!--row 7-->
 <div class="white"></div>
 <div class="black"></div>
 <div class="white"></div>
@@ -214,6 +288,7 @@
 <div class="white"></div>
 <div class="black"></div>
 
+<!--row 8-->
 <div class="black"></div>
 <div class="white"></div>
 <div class="black"></div>
@@ -225,6 +300,7 @@
 <div class="black"></div>
 <div class="white"></div>
 
+<!--row 9-->
 <div class="white"></div>
 <div class="black"></div>
 <div class="white"></div>
@@ -236,31 +312,7 @@
 <div class="white"></div>
 <div class="black"></div>
 
-
-<div class="black"></div>
-<div class="white"></div>
-<div class="black"></div>
-<div class="white"></div>
-<div class="black"></div>
-<div class="white"></div>
-<div class="black"></div>
-<div class="white"></div>
-<div class="black"></div>
-<div class="white"></div>
-
-
-<div class="white"></div>
-<div class="black"></div>
-<div class="white"></div>
-<div class="black"></div>
-<div class="white"></div>
-<div class="black"></div>
-<div class="white"></div>
-<div class="black"></div>
-<div class="white"></div>
-<div class="black"></div>
-
-
+<!--row 10-->
 <div class="black"></div>
 <div class="white"></div>
 <div class="black"></div>
@@ -390,11 +442,20 @@ button:hover{
     border: 10px solid #333;
 }
 
+.blue {
+  float: left;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(14,54,134);
+    font-size:50px;
+    text-align:center;
+}
+
 .black {
     float: left;
     width: 100px;
     height: 100px;
-    background-color: rgb(238,238,210);
+    background-color: rgb(118,150,86);
     font-size:50px;
     text-align:center;
 }
@@ -403,7 +464,7 @@ button:hover{
     float: left;
     width: 100px;
     height: 100px;
-    background-color: rgb(238,238,210);
+    background-color: rgb(186,202,68);
     font-size:50px;
     text-align:center;
 }
@@ -414,16 +475,18 @@ button:hover{
   position: absolute;
   z-index: 9;
   text-align: center;
-  left: 257px;
+  left: 1200px;
   top: 65px;
+  background-color: rgb(0,100,200);
 }
 #blackKing {
   font-size: 80px;
   position: absolute;
   z-index: 9;
   text-align: center;
-  left: 257px;
-  top: 625px
+  left: 1200px;
+  top: 625px;
+  background-color: rgb(200,100,0);
 }
 
 
@@ -432,7 +495,7 @@ button:hover{
   position: absolute;
   z-index: 9;
   text-align: center;
-  left: 340px;
+  left: 1300px;
   top: 65px;
 }
 #blackQueen {
@@ -440,7 +503,7 @@ button:hover{
   position: absolute;
   z-index: 9;
   text-align: center;
-  left: 340px;
+  left: 1300px;
   top: 625px;
 }
 
@@ -450,7 +513,7 @@ button:hover{
   position: absolute;
   z-index: 9;
   text-align: center;
-  left: 17px;
+  left: 1400px;
   top: 65px;
 }
 #blackRook1 {
@@ -458,7 +521,7 @@ button:hover{
   position: absolute;
   z-index: 9;
   text-align: center;
-  left: 17px;
+  left: 1400px;
   top: 625px;
 }
 
