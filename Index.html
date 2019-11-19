@@ -34,7 +34,7 @@
 <h3>Encounters can be triggered by a unit attacking another. The units’ numbers are revealed to each other and the lower number wins. If their numbers are equal, both units die. If the unit who started the encounter wins, they take the loser’s place. If the attacked unit wins, they stay in the same place and don’t move.</h3>
 
 
-<img id="blueMajor" src="Major.png" draggable="true" ondragstart="drag(event)" width="100" height="100" date-value="4"></div>
+<img id="blueMajor" src="Major.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value="4"></div>
 <img id="blueCaptain" src="wheel.png" draggable="true" ondragstart="drag(event)" width="100" height="100" date-value="5"></div>
 <img id="blueGeneral" src="general.png" draggable="true" ondragstart="drag(event)" width="100" height="100" date-value="2"></div>
 
@@ -236,6 +236,7 @@ p {
 }
 
 .white {
+  text-align: center;
   float: left; 
   width: 100px; 
   height: 100px;
@@ -243,6 +244,7 @@ p {
 }
 
 .black {
+  text-align: center;
   float: left; 
   width: 100px; 
   height: 100px;
@@ -275,6 +277,9 @@ button:hover{
 #blueMajor {
   background-color: rgb(50,50,200);
   cursor: pointer;
+  top: 50%;
+  -ms-transform: translateY(50%);
+  transform: translateY(15%);
 }
 
 #blueMajor:hover {
