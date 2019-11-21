@@ -8,6 +8,8 @@
   </head>
   <body>
 
+
+    
 <button onclick="location.reload()">New Game</button>
 
 <h1>Our Stratego Rules</h1>
@@ -27,7 +29,7 @@
   <p>Colonel; 3 (2x)</p>
   <p>Major; 4 (2x) <img  src="Major.png" width="50" height="50"></div></p> 
   <p>Captain;5 (Has a boat that crosses water) (4x) <img  src="wheel.png" width="60" height="60"></div></p>
-  <p>Lieutenant;6 (Can attack from 2 spaces away) (4x)</p>
+  <p>Lieutenant;6 (Can attack from 2 spaces away) (4x) <img  src="spear2.png" width="50" height="50"></div></p>
   <p>Sergeant;7 (Decreases the level of Marshal by 1 on attack) (4x) <img  src="sergeant hat.gif" width="50" height="50"></div></p>
   <p>Miner;8 (5x) <img  src="pickaxe.png" width="50" height="50"></div></p>
   <p>Scout;9 (Can move as much as they want) (6x)</p>
@@ -186,6 +188,12 @@
 
 <script>
 
+document.body.style.zoom = 0.8
+
+var scale = 'scale(1)';
+document.body.style.webkitTransform =  scale; 
+
+
 function allowDrop(ev) {
   ev.preventDefault();
 }
@@ -285,8 +293,8 @@ button{
   padding: 10px;
   cursor: pointer;
   position:relative;
-  top: 1598px;
-  left: 990px;
+  top: 1555px;
+  left: 1050px;
 }
 button:hover{
   background-color: rgb(118,150,86);
