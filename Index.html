@@ -41,8 +41,10 @@
 <h4>
   <img id="blueMarshal"  src="marshall3.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value="1"></div>
   <img id="blueGeneral" src="general.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value="2"></div>
+  <img id="blueColonel" src="Colonel 3.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value="3"></div>
   <img id="blueMajor" src="Major.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value="4"></div>
   <img id="blueCaptain" src="wheel.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value="5"></div>
+  <img id="blueLieutenant" src="spear4.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value="6"></div>
 </h4>
 
 
@@ -353,6 +355,20 @@ transform: scale(1.25);
 background-color: rgb(50,50,255);
 transform: scale(1.25);
 }
+#blueColonel {
+  background-color: rgb(50,50,200);
+  cursor: pointer;
+  transition: transform .1s; 
+  -ms-transform: translateY(50%);
+  transform: translateY(0%);
+  padding: 10px;
+  background-clip: content-box;
+}
+
+#blueColonel:hover {
+background-color: rgb(50,50,255);
+transform: scale(1.25);
+}
 
 #blueMajor {
   background-color: rgb(50,50,200);
@@ -384,7 +400,20 @@ background-color: rgb(50,50,255);
 transform: scale(1.25);
 }
 
+#blueLieutenant {
+  background-color: rgb(50,50,200);
+  cursor: pointer;
+  transition: transform .1s; 
+  -ms-transform: translateY(50%);
+  transform: translateY(0%);
+  padding: 10px;
+  background-clip: content-box;
+}
 
+#blueLieutenant:hover {
+background-color: rgb(50,50,255);
+transform: scale(1.25);
+}
 
 #redPieces {
   background-color: rgb(200,50,50);
