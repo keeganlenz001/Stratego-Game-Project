@@ -12,6 +12,8 @@
     
 <button onclick="location.reload()">New Game</button>
 
+<button2 id="myTurn" onclick="changeTurn()">End Turn</button2>
+
 <h1>Our Stratego Rules</h1>
 
 <h3>Objective: Capture the openents flag</h3>
@@ -76,8 +78,7 @@
   <img id="blueScout4" src="scout3.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value="9"></div>
   <img id="blueScout5" src="scout3.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value="9"></div>
   <img id="blueScout6" src="scout3.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value="9"></div>
-  
-  <img id="blueFlag" src="blueFlag.png" width="80" height="80" date-value="0"></div>
+
   
 </h4>
 
@@ -96,7 +97,7 @@
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-<div class="blueFlag"></div>
+<div class="blueFlag">BLUE FLAG</div>
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -211,7 +212,7 @@
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-<div class="redFlag"></div>
+<div class="redFlag">RED FLAG</div>
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -264,8 +265,6 @@
   <img id="redScout5"  src="scout3.png" draggable="true" ondragstart="drag(event)" width="80" height="80" data-value="9"></div>
   <img id="redScout6"  src="scout3.png" draggable="true" ondragstart="drag(event)" width="80" height="80" data-value="9"></div>
 
-  <img id="redFlag" src="redFlag.png" width="80" height="80" data-value="0"></div>
-
 </h4>
 
 <script>
@@ -304,6 +303,15 @@ function waterDrop(w) {
   w.preventDefault();
   var data = w.dataTransfer.getData("text");
   w.target.appendChild(document.getElementById(data));
+}
+
+function changeTurn() {
+  var turn = document.getElementById('myTurn');
+  if (turn.match()) {
+    "blueTurn";
+  } else {
+    "redTurn";
+  }
 }
 
 </script>
@@ -362,6 +370,8 @@ p {
 
 .blueFlag {
   text-align: center;
+  font-size: 35px;
+  color: rgb(255,255,255);
   float: left; 
   width: 100px; 
   height: 100px;
@@ -370,6 +380,8 @@ p {
 
 .redFlag {
   text-align: center;
+  font-size: 35px;
+  color: rgb(255,255,255);
   float: left; 
   width: 100px; 
   height: 100px;
@@ -414,9 +426,25 @@ button{
 button:hover{
   background-color: rgb(125,125,125);
   transform: scale(1.1);
-  
 }
 
+button2{
+  font-family: 'Work Sans', sans-serif;
+  font-size: 30px;
+  background-color: rgb(200,50,50);
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  transition: transform .1s; 
+  cursor: pointer;
+  position:relative;
+  top: 2750px;
+  left: 1100px;
+}
+button2:hover{
+  background-color: rgb(125,125,125);
+  transform: scale(1.1);
+}
 
 #blueMarshal {
   background-color: rgb(50,50,200);
@@ -432,6 +460,7 @@ button:hover{
 background-color: rgb(50,50,255);
 transform: scale(1.25);
 }
+
 #blueGeneral {
   background-color: rgb(50,50,200);
   cursor: pointer;
