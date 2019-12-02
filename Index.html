@@ -39,7 +39,7 @@
 
 
 <h4>
-  <img id="bluePeices"  src="marshall3.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value="1"></div>
+  <img id="blueMarshal"  src="marshall3.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value="1"></div>
   <img id="bluePeices" src="general.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value="2"></div>
   <img id="bluePeices" src="Colonel 3.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value="3"></div>
   <img id="bluePeices" src="Major.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value="4"></div>
@@ -233,7 +233,7 @@
 
 <script>
 
-document.body.style.zoom = 0.8
+document.body.style.zoom = 0.7
 
 var scale = 'scale(1)';
 document.body.style.webkitTransform =  scale; 
@@ -339,7 +339,7 @@ button{
   transition: transform .1s; 
   cursor: pointer;
   position:relative;
-  top: 2050px;
+  top: 2750px;
   left: 1100px;
 }
 button:hover{
@@ -349,22 +349,24 @@ button:hover{
 }
 
 
-#bluePeices {
+#blueMarshal {
   background-color: rgb(50,50,200);
   cursor: pointer;
   transition: transform .1s; 
   -ms-transform: translateY(50%);
-  transform: translateY(0%);
+  transform: translateY(-1%);
   padding: 10px;
   background-clip: content-box;
 }
 
-#bluePeices:hover {
+#blueMarshal:hover {
 background-color: rgb(50,50,255);
 transform: scale(1.25);
 }
 
-#redPieces {
+
+
+#redMarshal {
   background-color: rgb(200,50,50);
   cursor: pointer;
   transition: transform .1s; 
@@ -374,7 +376,22 @@ transform: scale(1.25);
   background-clip: content-box;
 }
 
-#redPieces:hover {
+#redMarshal:hover {
+background-color: rgb(255,50,50);
+transform: scale(1.25);
+}
+
+#redGeneral {
+  background-color: rgb(200,50,50);
+  cursor: pointer;
+  transition: transform .1s; 
+  -ms-transform: translateY(50%);
+  transform: translateY(0%);
+  padding: 10px;
+  background-clip: content-box;
+}
+
+#redGeneral:hover {
 background-color: rgb(255,50,50);
 transform: scale(1.25);
 }
