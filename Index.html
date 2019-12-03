@@ -305,18 +305,18 @@ function drop(ev) {
   var data = ev.dataTransfer.getData("text");
   ev.target.appendChild(document.getElementById(data));
   
-  if(data-value-blue<data-value-red){
-    removeClass(bluePiece)
-  }
+  // if(data-value-blue<data-value-red){
+  //   removeChild(bluePiece)
+  // }
 
-  if(data-value-red<data-value-blue){
-    removeClass(redPiece)
-  }
+  // if(data-value-red<data-value-blue){
+  //   removeChild(redPiece)
+  // }
 
-  if(data-value-red === data-value-blue){
-    removeClass(redPiece)
-    removeClass(bluePiece)
-  }
+  // if(data-value-red === data-value-blue){
+  //   removeChild(redPiece)
+  //   removeChild(bluePiece)
+  // }
 }
 
 // function waterDrop(w) {
