@@ -9,15 +9,12 @@
   <body>
 
 
-<img id="myImage" onclick="changeImage()" src="redTurn.png" width="100" height="100">
-<img id="myImage" onclick="changeImage()" src="blueTurn.png" width="100" height="100">
-<p>If the square is your color, then it's your turn.</p>
-
 <div class="turn">
   <img id="myImage" onclick="changeImage()" src="pic_red.png" width="150" height="150">
   <div class="text">End Turn</div>
   <h5>Color Of Square = Player's Turn</h5>
   </div>
+
 
 <button onclick="location.reload()">New Game</button>
 
@@ -224,7 +221,7 @@
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-<div class="redFlag">RED FLAG</div>
+<div class="redFlag"ondrop="drop(location.reload())" ondragover="allowDrop(event)">RED FLAG</div>
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -319,10 +316,10 @@ function waterDrop(w) {
 
 function changeImage() {
   var image = document.getElementById('myImage');
-  if (image.src.match("Turn")) {
-    image.src = "redTurn.png";
+  if (image.src.match("blue")) {
+    image.src = "pic_red.png";
   } else {
-    image.src = "blueTurn.png";
+    image.src = "pic_blue.png";
   }
 }
 
@@ -355,6 +352,13 @@ h2 {
   font-size: 25px;
   background-color: #444;
   color: rgb(225,225,225);
+}
+
+h5 {
+  font-weight: 300;
+  margin: 0px;
+  font-size: 25px;
+  color: rgb(100,100,100);
 }
 
 p {
@@ -432,13 +436,33 @@ button{
   transition: transform .1s; 
   cursor: pointer;
   position:relative;
-  top: 2750px;
+  top: 2370px;
   left: 1100px;
 }
 button:hover{
   background-color: rgb(125,125,125);
   transform: scale(1.1);
 }
+
+.turn {
+  position: relative;
+  text-align: center;
+  color: white;
+  top: 3000px;
+  left:-250px;
+}
+
+.text {
+  font-size: 30px;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(100,100,100);
+}
+
+
+
 
 #blueTurn{
   font-family: 'Work Sans', sans-serif;
