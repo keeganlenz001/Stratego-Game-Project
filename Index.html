@@ -103,7 +103,9 @@
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
 <div class="blueFlag"ondrop="drop(location.reload())" ondragover="allowDrop(event)">BLUE FLAG</div>
+
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -221,7 +223,9 @@
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-<div class="redFlag"ondrop="drop(location.reload())" ondragover="allowDrop(event)">RED FLAG</div>
+
+<div class="redFlag"ondrop="drop(blueWins())" ondragover="allowDrop(event)">RED FLAG</div>
+
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -321,6 +325,16 @@ function changeImage() {
   } else {
     image.src = "pic_blue.png";
   }
+}
+
+function blueWins() {
+  alert("Blue Wins! CLICK 'OK' TO START A NEW GAME");
+  location.reload();
+}
+
+function redWins() {
+  alert("Red Wins! CLICK 'OK' TO START A NEW GAME");
+  location.reload();
 }
 
 </script>
