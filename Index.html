@@ -140,14 +140,14 @@
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-<div class="darkBlue"></div>
-<div class="lightBlue"></div>
+<div class="darkBlue"ondrop="waterDrop(event)" ondragover="allowWaterDrop(event)"></div>
+<div class="lightBlue"ondrop="waterDrop(event)" ondragover="allowWaterDrop(event)"></div>
 
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-<div class="darkBlue"></div>
-<div class="lightBlue"></div>
+<div class="darkBlue"ondrop="waterDrop(event)" ondragover="allowWaterDrop(event)"></div>
+<div class="lightBlue"ondrop="waterDrop(event)" ondragover="allowWaterDrop(event)"></div>
 
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -157,14 +157,14 @@
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-<div class="lightBlue"></div>
-<div class="darkBlue"></div>
+<div class="lightBlue"ondrop="waterDrop(event)" ondragover="allowWaterDrop(event)"></div>
+<div class="darkBlue"ondrop="waterDrop(event)" ondragover="allowWaterDrop(event)"></div>
 
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-<div class="lightBlue"></div>
-<div class="darkBlue"></div>
+<div class="lightBlue"ondrop="waterDrop(event)" ondragover="allowWaterDrop(event)"></div>
+<div class="darkBlue"ondrop="waterDrop(event)" ondragover="allowWaterDrop(event)"></div>
 
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -238,10 +238,10 @@
   <img id="redMajor" src="Major.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value-red="4"></div>
   <img id="redMajor2" src="Major.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value-red="4"></div>
 
-  <img id="redWheel" src="wheel.png" draggable="true" ondragstart="drag(event)" ondragstart="waterDrag(w)" width="80" height="80" data-value-red="5"></div>
-  <img id="redWheel2" src="wheel.png" draggable="true" ondragstart="drag(event)" ondragstart="waterDrag(w)" width="80" height="80" data-value-red="5"></div>
-  <img id="redWheel3" src="wheel.png" draggable="true" ondragstart="drag(event)" ondragstart="waterDrag(w)" width="80" height="80" data-value-red="5"></div>
-  <img id="redWheel4" src="wheel.png" draggable="true" ondragstart="drag(event)" ondragstart="waterDrag(w)" width="80" height="80" data-value-red="5"></div>
+  <img id="redWheel" src="wheel.png" draggable="true" ondragstart="drag(event)" width="80" height="80" data-value-red="5"></div>
+  <img id="redWheel2" src="wheel.png" draggable="true" ondragstart="drag(event)" width="80" height="80" data-value-red="5"></div>
+  <img id="redWheel3" src="wheel.png" draggable="true" ondragstart="drag(event)" width="80" height="80" data-value-red="5"></div>
+  <img id="redWheel4" src="wheel.png" draggable="true" ondragstart="drag(event)" width="80" height="80" data-value-red="5"></div>
 
   <img id="redSpear"  src="spear4.png" draggable="true" ondragstart="drag(event)" width="80" height="80" data-value-red="6"></div>
   <img id="redSpear2"  src="spear4.png" draggable="true" ondragstart="drag(event)" width="80" height="80" data-value-red="6"></div>
@@ -286,19 +286,17 @@ function allowDrop(ev) {
   ev.preventDefault();
 }
 
-// function allowWaterDrop(w) {
-//   w.preventDefault();
-// }
+function allowWaterDrop(ev) {
+  ev.target.appendChild(document.getElementById("blueWheel").getAttribute('data-value').preventDefault());
+  ev.target.appendChild(document.getElementById("blueWheel2").getAttribute('data-value').preventDefault());
+  ev.target.appendChild(document.getElementById("blueWheel3").getAttribute('data-value').preventDefault());
+  ev.target.appendChild(document.getElementById("blueWheel4").getAttribute('data-value').preventDefault());
+}
 
 
 function drag(ev) {
   ev.dataTransfer.setData("text", ev.target.id);
 }
-
-// function waterDrag(w) {
-//   w.dataTransfer.setData("text", w.target.id);
-// }
-
 
 function drop(ev) {
   ev.preventDefault();
@@ -317,6 +315,15 @@ function drop(ev) {
   //   removeChild(redPiece)
   //   removeChild(bluePiece)
   // }
+}
+
+function waterDrop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById("blueWheel").getAttribute('data-value'));
+  ev.target.appendChild(document.getElementById("blueWheel2").getAttribute('data-value'));
+  ev.target.appendChild(document.getElementById("blueWheel3").getAttribute('data-value'));
+  ev.target.appendChild(document.getElementById("blueWheel4").getAttribute('data-value'));
 }
 
 // function waterDrop(w) {
