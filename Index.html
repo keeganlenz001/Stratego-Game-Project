@@ -4,16 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Keegan Lenz and Spencer Folsom's Board Game Poject</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-
-
-<div class="turn">
-  <img id="myImage" onclick="changeImage()" src="pic_red.png" width="150" height="150">
-  <div class="text">End Turn</div>
-  <h5>Color Of Square = Player's Turn</h5>
-  </div>
 
 
 <h1>Our Stratego Rules</h1>
@@ -148,14 +140,14 @@
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-<div class="darkBlue"ondrop="drop(w)" ondragover="allowWaterDrop(w)"></div>
-<div class="lightBlue"ondrop="drop(w)" ondragover="allowWaterDrop(w)"></div>
+<div class="darkBlue"></div>
+<div class="lightBlue"></div>
 
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-<div class="darkBlue"ondrop="drop(w)" ondragover="allowWaterDrop(w)"></div>
-<div class="lightBlue"ondrop="drop(w)" ondragover="allowWaterDrop(w)"></div>
+<div class="darkBlue"></div>
+<div class="lightBlue"></div>
 
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -165,14 +157,14 @@
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-<div class="lightBlue"ondrop="drop(w)" ondragover="allowWaterDrop(w)"></div>
-<div class="darkBlue"ondrop="drop(w)" ondragover="allowWaterDrop(w)"></div>
+<div class="lightBlue"></div>
+<div class="darkBlue"></div>
 
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-<div class="lightBlue"ondrop="drop(w)" ondragover="allowWaterDrop(w)"></div>
-<div class="darkBlue"ondrop="drop(w)" ondragover="allowWaterDrop(w)"></div>
+<div class="lightBlue"></div>
+<div class="darkBlue"></div>
 
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -275,6 +267,12 @@
   <img id="redScout6"  src="scout3.png" draggable="true" ondragstart="drag(event)" width="80" height="80" data-value="9"></div>
 
 </h4>
+
+<div class="turn">
+    <img id="myImage" onclick="changeImage()" src="pic_red.png" width="150" height="150">
+    <div class="text">End Turn</div>
+    <h5>Color Of Square = Player's Turn</h5>
+    </div>
 
 <script>
 
