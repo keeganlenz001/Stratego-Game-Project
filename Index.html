@@ -269,8 +269,8 @@
 </h4>
 
 <div class="turn">
-    <img id="myImage" onclick="changeImage()" src="pic_red.png" width="150" height="150">
-    <div class="text">End Turn</div>
+    <img id="turnButton" onclick="changeImage()" src="pic_red.png" width="150" height="150">
+    <div class="text">CLICK SQUARE TO END TURN</div>
     <h5>Color Of Square = Player's Turn</h5>
     </div>
 
@@ -326,7 +326,7 @@ function drop(ev) {
 // }
 
 function changeImage() {
-  var image = document.getElementById('myImage');
+  var image = document.getElementById('turnButton');
   if (image.src.match("blue")) {
     image.src = "pic_red.png";
   } else {
@@ -379,7 +379,7 @@ h5 {
   font-weight: 300;
   margin: 0px;
   font-size: 25px;
-  color: rgb(100,100,100);
+  color: rgb(50,50,50);
 }
 
 p {
@@ -451,7 +451,7 @@ p {
 .turn {
   position: absolute;
   text-align: center;
-  color: white;
+  color: rgb(225,225,225);
   top: 2750px;
   left: 1200px;
 }
@@ -459,9 +459,9 @@ p {
 .text {
   font-size: 30px;
   position: absolute;
-  top: 15%;
+  top: 0%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -70%);
   background-color: rgb(100,100,100);
 }
 
