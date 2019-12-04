@@ -228,6 +228,8 @@
 
 <h4>
 
+  <!-- <img v-on="{ mousedown, mouseup }" id="redMarshall" src="marshall3.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value-red="1"></div> -->
+
   <img  id="redMarshall" class="redPiece"  src="marshall3.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value-red="1"></div>
 
   <img id="redGeneral"  src="general.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value-red="2"></div>
@@ -280,6 +282,23 @@ document.body.style.zoom = .7
 
 var scale = 'scale(1)';
 document.body.style.webkitTransform =  scale; 
+
+
+// methods: {
+//     mousemove(e); {
+//         const moved = e.offset0px - this.start100px;
+//         // The mouse has moved "moved" pixels.
+//         // Now calculate whatever you want 
+//     }
+//     mousedown(e); {
+//         this.start100px = e.offset0px;
+
+//         e.currentTarget.addEventListener(this.mousemove);
+//     }
+//     mouseup(e); {
+//         e.currentTarget.removeEventListener(this.mousemove);
+//     }
+// }
 
 
 function allowDrop(ev) {
