@@ -277,7 +277,7 @@
 
 <script>
 
-document.body.style.zoom = 0.7
+document.body.style.zoom = .7
 
 var scale = 'scale(1)';
 document.body.style.webkitTransform =  scale; 
@@ -326,12 +326,6 @@ function waterDrop(ev) {
   ev.target.appendChild(document.getElementById("blueWheel3").getAttribute('data-value'));
   ev.target.appendChild(document.getElementById("blueWheel4").getAttribute('data-value'));
 }
-
-// function waterDrop(w) {
-//   w.preventDefault();
-//   var data = w.dataTransfer.getData("text");
-//   w.target.appendChild(document.getElementById(data));
-// }
 
 function changeImage() {
   var image = document.getElementById('turnButton');
