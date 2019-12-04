@@ -305,17 +305,12 @@ function allowDrop(ev) {
   ev.preventDefault();
 }
 
-function allowWaterDrop(ev) {
-  ev.target.appendChild(document.getElementById("blueWheel").getAttribute('data-value').preventDefault());
-  ev.target.appendChild(document.getElementById("blueWheel2").getAttribute('data-value').preventDefault());
-  ev.target.appendChild(document.getElementById("blueWheel3").getAttribute('data-value').preventDefault());
-  ev.target.appendChild(document.getElementById("blueWheel4").getAttribute('data-value').preventDefault());
-}
-
-
-function drag(ev) {
-  ev.dataTransfer.setData("text", ev.target.id);
-}
+// function allowWaterDrop(ev) {
+//   ev.target.appendChild(document.getElementById("blueWheel").getAttribute('data-value').preventDefault());
+//   ev.target.appendChild(document.getElementById("blueWheel2").getAttribute('data-value').preventDefault());
+//   ev.target.appendChild(document.getElementById("blueWheel3").getAttribute('data-value').preventDefault());
+//   ev.target.appendChild(document.getElementById("blueWheel4").getAttribute('data-value').preventDefault());
+// }
 
 function drop(ev) {
   ev.preventDefault();
