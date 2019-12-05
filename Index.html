@@ -271,7 +271,7 @@
 </h4>
 
 <div class="turn">
-    <img id="turnButton" onclick="changeImage()" src="pic_red.png" width="150" height="150">
+    <img id="turnButton" onclick="changeTurn()" src="pic_red.png" width="150" height="150">
     <div class="text">CLICK SQUARE TO END TURN</div>
     <h5>Color Of Square = Player's Turn</h5>
     </div>
@@ -353,12 +353,172 @@ function waterDrop(ev) {
   ev.target.appendChild(document.getElementById("blueWheel4").getAttribute('data-value'));
 }
 
-function changeImage() {
+function changeTurn() {
   var image = document.getElementById('turnButton');
   if (image.src.match("blue")) {
+    
     image.src = "pic_red.png";
+
+    document.getElementById('blueMarshal').setAttribute('draggable',false);
+
+    document.getElementById('blueGeneral').setAttribute('draggable',false);
+
+    document.getElementById('blueColonel').setAttribute('draggable',false);
+    document.getElementById('blueColonel2').setAttribute('draggable',false);
+
+    document.getElementById('blueMajor').setAttribute('draggable',false);
+    document.getElementById('blueMajor2').setAttribute('draggable',false);
+
+    document.getElementById('blueCaptain').setAttribute('draggable',false);
+    document.getElementById('blueCaptain2').setAttribute('draggable',false);
+    document.getElementById('blueCaptain3').setAttribute('draggable',false);
+    document.getElementById('blueCaptain4').setAttribute('draggable',false);
+
+    document.getElementById('blueLieutenant').setAttribute('draggable',false);
+    document.getElementById('blueLieutenant2').setAttribute('draggable',false);
+    document.getElementById('blueLieutenant3').setAttribute('draggable',false);
+    document.getElementById('blueLieutenant4').setAttribute('draggable',false);
+
+    document.getElementById('blueSergeant').setAttribute('draggable',false);
+    document.getElementById('blueSergeant2').setAttribute('draggable',false);
+    document.getElementById('blueSergeant3').setAttribute('draggable',false);
+    document.getElementById('blueSergeant4').setAttribute('draggable',false);
+
+    document.getElementById('blueMiner').setAttribute('draggable',false);
+    document.getElementById('blueMiner2').setAttribute('draggable',false);
+    document.getElementById('blueMiner3').setAttribute('draggable',false);
+    document.getElementById('blueMiner4').setAttribute('draggable',false);
+    document.getElementById('blueMiner5').setAttribute('draggable',false);
+
+    document.getElementById('blueScout').setAttribute('draggable',false);
+    document.getElementById('blueScout2').setAttribute('draggable',false);
+    document.getElementById('blueScout3').setAttribute('draggable',false);
+    document.getElementById('blueScout4').setAttribute('draggable',false);
+    document.getElementById('blueScout5').setAttribute('draggable',false);
+    document.getElementById('blueScout6').setAttribute('draggable',false);
+    
+  
+
+    document.getElementById('redMarshall').setAttribute('draggable',true);
+
+    document.getElementById('redGeneral').setAttribute('draggable',true);
+
+    document.getElementById('redColonel').setAttribute('draggable',true);
+    document.getElementById('redColonel2').setAttribute('draggable',true);
+
+    document.getElementById('redMajor').setAttribute('draggable',true);
+    document.getElementById('redMajor2').setAttribute('draggable',true);
+
+    document.getElementById('redWheel').setAttribute('draggable',true);
+    document.getElementById('redWheel2').setAttribute('draggable',true);
+    document.getElementById('redWheel3').setAttribute('draggable',true);
+    document.getElementById('redWheel4').setAttribute('draggable',true);
+
+    document.getElementById('redSpear').setAttribute('draggable',true);
+    document.getElementById('redSpear2').setAttribute('draggable',true);
+    document.getElementById('redSpear3').setAttribute('draggable',true);
+    document.getElementById('redSpear4').setAttribute('draggable',true);
+
+    document.getElementById('redSergeant').setAttribute('draggable',true);
+    document.getElementById('redSergeant2').setAttribute('draggable',true);
+    document.getElementById('redSergeant3').setAttribute('draggable',true);
+    document.getElementById('redSergeant4').setAttribute('draggable',true);
+
+    document.getElementById('redMiner').setAttribute('draggable',true);
+    document.getElementById('redMiner2').setAttribute('draggable',true);
+    document.getElementById('redMiner3').setAttribute('draggable',true);
+    document.getElementById('redMiner4').setAttribute('draggable',true);
+    document.getElementById('redMiner5').setAttribute('draggable',true);
+
+    document.getElementById('redScout').setAttribute('draggable',true);
+    document.getElementById('redScout2').setAttribute('draggable',true);
+    document.getElementById('redScout3').setAttribute('draggable',true);
+    document.getElementById('redScout4').setAttribute('draggable',true);
+    document.getElementById('redScout5').setAttribute('draggable',true);
+    document.getElementById('redScout6').setAttribute('draggable',true);
+    
+    
   } else {
+
     image.src = "pic_blue.png";
+
+    document.getElementById('redMarshall').setAttribute('draggable',false);
+
+    document.getElementById('redGeneral').setAttribute('draggable',false);
+
+    document.getElementById('redColonel').setAttribute('draggable',false);
+    document.getElementById('redColonel2').setAttribute('draggable',false);
+
+    document.getElementById('redMajor').setAttribute('draggable',false);
+    document.getElementById('redMajor2').setAttribute('draggable',false);
+
+    document.getElementById('redWheel').setAttribute('draggable',false);
+    document.getElementById('redWheel2').setAttribute('draggable',false);
+    document.getElementById('redWheel3').setAttribute('draggable',false);
+    document.getElementById('redWheel4').setAttribute('draggable',false);
+
+    document.getElementById('redSpear').setAttribute('draggable',false);
+    document.getElementById('redSpear2').setAttribute('draggable',false);
+    document.getElementById('redSpear3').setAttribute('draggable',false);
+    document.getElementById('redSpear4').setAttribute('draggable',false);
+
+    document.getElementById('redSergeant').setAttribute('draggable',false);
+    document.getElementById('redSergeant2').setAttribute('draggable',false);
+    document.getElementById('redSergeant3').setAttribute('draggable',false);
+    document.getElementById('redSergeant4').setAttribute('draggable',false);
+
+    document.getElementById('redMiner').setAttribute('draggable',false);
+    document.getElementById('redMiner2').setAttribute('draggable',false);
+    document.getElementById('redMiner3').setAttribute('draggable',false);
+    document.getElementById('redMiner4').setAttribute('draggable',false);
+    document.getElementById('redMiner5').setAttribute('draggable',false);
+
+    document.getElementById('redScout').setAttribute('draggable',false);
+    document.getElementById('redScout2').setAttribute('draggable',false);
+    document.getElementById('redScout3').setAttribute('draggable',false);
+    document.getElementById('redScout4').setAttribute('draggable',false);
+    document.getElementById('redScout5').setAttribute('draggable',false);
+    document.getElementById('redScout6').setAttribute('draggable',false);
+
+
+
+    document.getElementById('blueMarshal').setAttribute('draggable',true);
+
+    document.getElementById('blueGeneral').setAttribute('draggable',true);
+
+    document.getElementById('blueColonel').setAttribute('draggable',true);
+    document.getElementById('blueColonel2').setAttribute('draggable',true);
+
+    document.getElementById('blueMajor').setAttribute('draggable',true);
+    document.getElementById('blueMajor2').setAttribute('draggable',true);
+
+    document.getElementById('blueCaptain').setAttribute('draggable',true);
+    document.getElementById('blueCaptain2').setAttribute('draggable',true);
+    document.getElementById('blueCaptain3').setAttribute('draggable',true);
+    document.getElementById('blueCaptain4').setAttribute('draggable',true);
+
+    document.getElementById('blueLieutenant').setAttribute('draggable',true);
+    document.getElementById('blueLieutenant2').setAttribute('draggable',true);
+    document.getElementById('blueLieutenant3').setAttribute('draggable',true);
+    document.getElementById('blueLieutenant4').setAttribute('draggable',true);
+
+    document.getElementById('blueSergeant').setAttribute('draggable',true);
+    document.getElementById('blueSergeant2').setAttribute('draggable',true);
+    document.getElementById('blueSergeant3').setAttribute('draggable',true);
+    document.getElementById('blueSergeant4').setAttribute('draggable',true);
+
+    document.getElementById('blueMiner').setAttribute('draggable',true);
+    document.getElementById('blueMiner2').setAttribute('draggable',true);
+    document.getElementById('blueMiner3').setAttribute('draggable',true);
+    document.getElementById('blueMiner4').setAttribute('draggable',true);
+    document.getElementById('blueMiner5').setAttribute('draggable',true);
+
+    document.getElementById('blueScout').setAttribute('draggable',true);
+    document.getElementById('blueScout2').setAttribute('draggable',true);
+    document.getElementById('blueScout3').setAttribute('draggable',true);
+    document.getElementById('blueScout4').setAttribute('draggable',true);
+    document.getElementById('blueScout5').setAttribute('draggable',true);
+    document.getElementById('blueScout6').setAttribute('draggable',true);
   }
 }
 
@@ -480,7 +640,7 @@ p {
   position: absolute;
   text-align: center;
   color: rgb(225,225,225);
-  top: 2750px;
+  top: 2500px;
   left: 1200px;
 }
 
@@ -567,6 +727,9 @@ p {
 background-color: rgb(50,50,255);
 transform: scale(1.25);
 }
+
+
+
 
 
 
