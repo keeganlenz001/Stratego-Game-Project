@@ -369,13 +369,22 @@ function drop(ev) {
   var redCaptain4 = getElementById(redWheel4);
 
 function allowWaterDrop(ev) {
-  if(blueCaptain || blueCaptain2 || blueCaptain3 || blueCaptain4 || redCaptain || redCaptain2 || redCaptain3 || redCaptain4){
+  if(blueCaptain){
+  ev.preventDefault();
+  }
+  if(redCaptain){
   ev.preventDefault();
   }
 }
 
 function waterDrop(ev) {
-  if(blueCaptain || blueCaptain2 || blueCaptain3 || blueCaptain4 || redCaptain || redCaptain2 || redCaptain3 || redCaptain4){
+  if(blueCaptain){
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+  changeTurn();
+  }
+  if(redCaptain){
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
   ev.target.appendChild(document.getElementById(data));
