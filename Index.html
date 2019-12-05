@@ -86,7 +86,7 @@
 <div class="chessboard">
 
 <!-- row 1 -->
-<div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div class="black"ondrop="drop(event)"  ondragover="allowDrop(event)"></div>
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -271,8 +271,7 @@
 </h4>
 
 <div class="turn">
-    <img id="turnButton" onclick="changeTurn()" src="pic_red.png" width="150" height="150">
-    <div class="text">CLICK SQUARE TO END TURN</div>
+    <img id="turnButton" src="pic_red.png" width="150" height="150">
     <h5>Color Of Square = Player's Turn</h5>
     </div>
 
@@ -321,6 +320,7 @@ function drop(ev) {
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
   ev.target.appendChild(document.getElementById(data));
+  changeTurn();
   
   // if(data-value-blue<data-value-red){
   //   $( "div" ).remove( ".redPiece" );
@@ -643,16 +643,6 @@ p {
   top: 2500px;
   left: 1200px;
 }
-
-.text {
-  font-size: 25px;
-  position: absolute;
-  top: 0%;
-  left: 50%;
-  transform: translate(-50%, -70%);
-  background-color: rgb(100,100,100);
-}
-
 
 
 
