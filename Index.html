@@ -140,14 +140,14 @@
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-<div class="darkBlue"ondrop="waterDrop(event)" ondragover="allowWaterDrop(event)"></div>
-<div class="lightBlue"ondrop="waterDrop(event)" ondragover="allowWaterDrop(event)"></div>
+<div class="darkBlue"></div>
+<div class="lightBlue"></div>
 
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-<div class="darkBlue"ondrop="waterDrop(event)" ondragover="allowWaterDrop(event)"></div>
-<div class="lightBlue"ondrop="waterDrop(event)" ondragover="allowWaterDrop(event)"></div>
+<div class="darkBlue"></div>
+<div class="lightBlue"></div>
 
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -157,14 +157,14 @@
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-<div class="lightBlue"ondrop="waterDrop(event)" ondragover="allowWaterDrop(event)"></div>
-<div class="darkBlue"ondrop="waterDrop(event)" ondragover="allowWaterDrop(event)"></div>
+<div class="lightBlue"></div>
+<div class="darkBlue"></div>
 
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-<div class="lightBlue"ondrop="waterDrop(event)" ondragover="allowWaterDrop(event)"></div>
-<div class="darkBlue"ondrop="waterDrop(event)" ondragover="allowWaterDrop(event)"></div>
+<div class="lightBlue"></div>
+<div class="darkBlue"></div>
 
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -304,17 +304,30 @@ function allowDrop(ev) {
   ev.preventDefault();
 }
 
-function allowWaterDrop(ev) {
-  ev.target.appendChild(document.getElementById("blueWheel").getAttribute('data-value').preventDefault());
-  ev.target.appendChild(document.getElementById("blueWheel2").getAttribute('data-value').preventDefault());
-  ev.target.appendChild(document.getElementById("blueWheel3").getAttribute('data-value').preventDefault());
-  ev.target.appendChild(document.getElementById("blueWheel4").getAttribute('data-value').preventDefault());
-}
-
 
 function drag(ev) {
   ev.dataTransfer.setData("text", ev.target.id);
 }
+
+
+// function Drop(ev) {
+//       ev.preventDefault();
+//       var data = ev.dataTransfer.getData("text");  
+//       if ($(this).attr("class") === "chessboard") {
+//       	ev.target.appendChild(document.getElementById(data));
+//       }
+//       if ( ev.target.getAttribute('data-boxtype') ==  document.getElementById(data).getAttribute('data-appendto')) {
+//             ev.target.appendChild(document.getElementById(data));
+//     	}
+//       changeTurn
+//     }
+
+
+//     var elemens = document.querySelectorAll('.draggable');
+//     [].forEach.call(elemens, function(elem) {
+//       elem.addEventListener('dragover', DragOver, false);
+//       elem.addEventListener('drop', Drop, false);
+//     });
 
 function drop(ev) {
   ev.preventDefault();
@@ -344,14 +357,6 @@ function drop(ev) {
   // }
 }
 
-function waterDrop(ev) {
-  ev.preventDefault();
-  var data = ev.dataTransfer.getData("text");
-  ev.target.appendChild(document.getElementById("blueWheel").getAttribute('data-value'));
-  ev.target.appendChild(document.getElementById("blueWheel2").getAttribute('data-value'));
-  ev.target.appendChild(document.getElementById("blueWheel3").getAttribute('data-value'));
-  ev.target.appendChild(document.getElementById("blueWheel4").getAttribute('data-value'));
-}
 
 function changeTurn() {
   var image = document.getElementById('turnButton');
