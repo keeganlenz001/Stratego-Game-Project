@@ -140,14 +140,14 @@
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-<div class="darkBlue"></div>
-<div class="lightBlue"></div>
+<div class="darkBlue"ondrop="waterDrop(event)" ondragover="allowWaterDrop(event)"></div>
+<div class="lightBlue"ondrop="waterDrop(event)" ondragover="allowWaterDrop(event)"></div>
 
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-<div class="darkBlue"></div>
-<div class="lightBlue"></div>
+<div class="darkBlue"ondrop="waterDrop(event)" ondragover="allowWaterDrop(event)"></div>
+<div class="lightBlue"ondrop="waterDrop(event)" ondragover="allowWaterDrop(event)"></div>
 
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -157,14 +157,14 @@
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-<div class="lightBlue"></div>
-<div class="darkBlue"></div>
+<div class="lightBlue"ondrop="waterDrop(event)" ondragover="allowWaterDrop(event)"></div>
+<div class="darkBlue"ondrop="waterDrop(event)" ondragover="allowWaterDrop(event)"></div>
 
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-<div class="lightBlue"></div>
-<div class="darkBlue"></div>
+<div class="lightBlue"ondrop="waterDrop(event)" ondragover="allowWaterDrop(event)"></div>
+<div class="darkBlue"ondrop="waterDrop(event)" ondragover="allowWaterDrop(event)"></div>
 
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -329,6 +329,7 @@ function drag(ev) {
 //       elem.addEventListener('drop', Drop, false);
 //     });
 
+
 function drop(ev) {
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
@@ -356,6 +357,32 @@ function drop(ev) {
   //   data-value-red === data-value-red+1
   // }
 }
+
+  var blueCaptain = getElementById(blueCaptain);
+  var blueCaptain2 = getElementById(blueCaptain2);
+  var blueCaptain3 = getElementById(blueCaptain3);
+  var blueCaptain4 = getElementById(blueCaptain4);
+
+  var redCaptain = getElementById(redWheel);
+  var redCaptain2 = getElementById(redWheel2);
+  var redCaptain3 = getElementById(redWheel3);
+  var redCaptain4 = getElementById(redWheel4);
+
+function allowWaterDrop(ev) {
+  if(blueCaptain || blueCaptain2 || blueCaptain3 || blueCaptain4 || redCaptain || redCaptain2 || redCaptain3 || redCaptain4){
+  ev.preventDefault();
+  }
+}
+
+function waterDrop(ev) {
+  if(blueCaptain || blueCaptain2 || blueCaptain3 || blueCaptain4 || redCaptain || redCaptain2 || redCaptain3 || redCaptain4){
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+  changeTurn();
+  }
+}
+
 
 
 function changeTurn() {
