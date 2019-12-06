@@ -45,7 +45,7 @@
   <img id="blueMajor" src="Major.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value-blue="4"></div>
   <img id="blueMajor2" src="Major.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value-blue="4"></div>
 
-  <img id="blueCaptain" src="wheel.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value-blue="5"></img>
+  <img id="blueCaptain" src="wheel.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value-blue="5"></div>
   <img id="blueCaptain2" src="wheel.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value-blue="5"></div>
   <img id="blueCaptain3" src="wheel.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value-blue="5"></div>
   <img id="blueCaptain4" src="wheel.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value-blue="5"></div>
@@ -358,24 +358,33 @@ function drop(ev) {
   // }
 }
 
-  // var blueCaptain = getElementById(blueCaptain);
-  // var blueCaptain2 = getElementById(blueCaptain2);
-  // var blueCaptain3 = getElementById(blueCaptain3);
-  // var blueCaptain4 = getElementById(blueCaptain4);
+  var blueCaptain = getElementById(blueCaptain);
+  var blueCaptain2 = getElementById(blueCaptain2);
+  var blueCaptain3 = getElementById(blueCaptain3);
+  var blueCaptain4 = getElementById(blueCaptain4);
 
-  // var redCaptain = getElementById(redWheel);
-  // var redCaptain2 = getElementById(redWheel2);
-  // var redCaptain3 = getElementById(redWheel3);
-  // var redCaptain4 = getElementById(redWheel4);
+  var redCaptain = getElementById(redWheel);
+  var redCaptain2 = getElementById(redWheel2);
+  var redCaptain3 = getElementById(redWheel3);
+  var redCaptain4 = getElementById(redWheel4);
 
 function allowWaterDrop(ev) {
-  if($("img").attr("id") == "blueCaptain"){
+  if(blueCaptain){
+  ev.preventDefault();
+  }
+  if(redCaptain){
   ev.preventDefault();
   }
 }
 
 function waterDrop(ev) {
-  if($("img").attr("id") == "blueCaptain"){
+  if(blueCaptain){
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+  changeTurn();
+  }
+  if(redCaptain){
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
   ev.target.appendChild(document.getElementById(data));
