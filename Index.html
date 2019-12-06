@@ -358,33 +358,24 @@ function drop(ev) {
   // }
 }
 
-  var blueCaptain = getElementById(blueCaptain);
-  var blueCaptain2 = getElementById(blueCaptain2);
-  var blueCaptain3 = getElementById(blueCaptain3);
-  var blueCaptain4 = getElementById(blueCaptain4);
+  var blueCaptain = document.getElementById(blueCaptain);
+  var blueCaptain2 = document.getElementById(blueCaptain2);
+  var blueCaptain3 = document.getElementById(blueCaptain3);
+  var blueCaptain4 = document.getElementById(blueCaptain4);
 
-  var redCaptain = getElementById(redWheel);
-  var redCaptain2 = getElementById(redWheel2);
-  var redCaptain3 = getElementById(redWheel3);
-  var redCaptain4 = getElementById(redWheel4);
+  var redCaptain = document.getElementById(redWheel);
+  var redCaptain2 = document.getElementById(redWheel2);
+  var redCaptain3 = document.getElementById(redWheel3);
+  var redCaptain4 = document.getElementById(redWheel4);
 
 function allowWaterDrop(ev) {
   if(blueCaptain){
-  ev.preventDefault();
-  }
-  if(redCaptain){
   ev.preventDefault();
   }
 }
 
 function waterDrop(ev) {
   if(blueCaptain){
-  ev.preventDefault();
-  var data = ev.dataTransfer.getData("text");
-  ev.target.appendChild(document.getElementById(data));
-  changeTurn();
-  }
-  if(redCaptain){
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
   ev.target.appendChild(document.getElementById(data));
