@@ -230,7 +230,7 @@
 
   <!-- <img v-on="{ mousedown, mouseup }" id="redMarshall" src="marshall3.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value-red="1"></div> -->
 
-  <img  id="redMarshall" class="redPiece"  src="marshall3.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value-red="1"></div>
+  <img  id="redMarshall" class="redPiece"  src="marshall3.png" draggable="true" ondragstart="drag(event)" ondrop="drop(blueWins())" ondragover="allowDrop(event)" width="80" height="80" date-value-red="1"></div>
 
   <img id="redGeneral"  src="general.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value-red="2"></div>
 
@@ -369,13 +369,13 @@ function drop(ev) {
   var redCaptain4 = document.getElementById('redWheel4');
 
 function allowWaterDrop(ev) {
-  if(blueCaptain){
+  if(blueCaptain || blueCaptain2 || blueCaptain3 || blueCaptain4 || redCaptain || redCaptain2 || redCaptain3 || redCaptain4){
   ev.preventDefault();
   }
 }
 
 function waterDrop(ev) {
-  if(blueCaptain){
+  if(blueCaptain || blueCaptain2 || blueCaptain3 || blueCaptain4 || redCaptain || redCaptain2 || redCaptain3 || redCaptain4){
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
   ev.target.appendChild(document.getElementById(data));
@@ -383,6 +383,15 @@ function waterDrop(ev) {
   }
 }
 
+
+// function captureRedPiece(){
+//   if(data-value-red<data-value-blue){
+//     removeChild('redPiece')
+//   }
+//   if(data-value-red == data-value-blue{
+//     removeChild('redPiece')
+//   })
+// }
 
 
 function changeTurn() {
