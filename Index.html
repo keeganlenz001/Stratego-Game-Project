@@ -230,7 +230,7 @@
 
   <!-- <img v-on="{ mousedown, mouseup }" id="redMarshall" src="marshall3.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value-red="1"></div> -->
 
-  <img  id="redMarshall" class="redPiece"  src="marshall3.png" draggable="true" ondragstart="drag(event)" ondrop="drop(blueWins())" ondragover="allowDrop(event)" width="80" height="80" date-value-red="1"></div>
+  <img  id="redMarshall" class="redPiece"  src="marshall3.png" draggable="true" ondragstart="drag(event)" ondrop="drop(captureRedPiece())" width="80" height="80" date-value-red="1"></div>
 
   <img id="redGeneral"  src="general.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value-red="2"></div>
 
@@ -384,14 +384,9 @@ function waterDrop(ev) {
 }
 
 
-// function captureRedPiece(){
-//   if(data-value-red<data-value-blue){
-//     removeChild('redPiece')
-//   }
-//   if(data-value-red == data-value-blue{
-//     removeChild('redPiece')
-//   })
-// }
+function captureRedPiece(){
+    $('#redMarshall').remove();
+  }
 
 
 function changeTurn() {
