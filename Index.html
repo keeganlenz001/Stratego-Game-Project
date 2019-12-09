@@ -34,6 +34,7 @@
 <h3>Encounters can be triggered by a unit attacking another. The lower number between the units wins. If their numbers are equal, both units die. If the unit who started the encounter wins, they take the loser’s place. If the attacked unit wins, they stay in the same place and don’t move.</h3>
 
 
+
 <h4>
   <img id="blueMarshal"  src="marshall3.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value-blue="1"></div>
 
@@ -230,7 +231,7 @@
 
   <!-- <img v-on="{ mousedown, mouseup }" id="redMarshall" src="marshall3.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value-red="1"></div> -->
 
-  <img  id="redMarshall" class="redPiece"  src="marshall3.png" draggable="true" ondragstart="drag(event)" ondrop="drop(captureRedPiece())" width="80" height="80" date-value-red="1"></div>
+  <img  id="redMarshall" class="redPiece" src="marshall3.png" draggable="true" ondragstart="drag(event)" ondrop="drop(captureRedPiece())" width="80" height="80" date-value-red="1"></div>
 
   <img id="redGeneral"  src="general.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value-red="2"></div>
 
@@ -384,9 +385,15 @@ function waterDrop(ev) {
 }
 
 
-function captureRedPiece(){
-    $('#redMarshall').remove();
-  }
+// function captureRedPiece(){
+//     $('#redMarshall').remove();
+//   }
+
+  function captureRedPiece() {
+    // Removes an element from the document
+    var el = document.getElementById('redMarshall');
+    el.remove();
+}
 
 
 function changeTurn() {
