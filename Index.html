@@ -36,9 +36,9 @@
 
 
 <h6>
-  <img id="blueMarshal"  src="marshall3.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value-blue="1"></div>
+  <img id="blueMarshal"  src="marshall3.png" draggable="true" ondragstart="drag(event)" ondrop="drop(captureBlueMarshall())" width="80" height="80" date-value-blue="1"></div>
 
-  <img id="blueGeneral" src="general.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value-blue="2"></div>
+  <img id="blueGeneral" src="general.png" draggable="true" ondragstart="drag(event)" ondrop="drop(captureBlueGeneral())" width="80" height="80" date-value-blue="2"></div>
 
   <img id="blueColonel" src="Colonel 3.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value-blue="3"></div>
   <img id="blueColonel2" src="Colonel 3.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value-blue="3"></div>
@@ -385,19 +385,38 @@ function waterDrop(ev) {
 }
 
 
-  function captureRedMarshall() {
-    var redMarshall = document.getElementById('redMarshall')
-    // if(red-data-value<=blue-data-value){
-    redMarshall.remove();
-  // }
-}
+// function capturePieces(){
 
-function captureRedGeneral() {
-    var redGeneral = document.getElementById('redGeneral')
-    // if(red-data-value<=blue-data-value){
-    redGeneral.remove();
-  // }
-}
+  function captureRedMarshall() {
+      var redMarshall = document.getElementById('redMarshall')
+      // if(red-data-value<=blue-data-value){
+      redMarshall.remove();
+    // }
+  }
+
+  function captureRedGeneral() {
+      var redGeneral = document.getElementById('redGeneral')
+      // if(red-data-value<=blue-data-value){
+      redGeneral.remove();
+    // }
+  }
+
+
+  function captureBlueMarshall() {
+      var blueMarshall = document.getElementById('blueMarshall')
+      // if(red-data-value<=blue-data-value){
+      blueMarshall.remove();
+    // }
+  }
+
+  function captureBlueGeneral() {
+      var blueGeneral = document.getElementById('blueGeneral')
+      // if(red-data-value<=blue-data-value){
+      blueGeneral.remove();
+    // }
+  }
+// }
+
 
 
 function changeTurn() {
