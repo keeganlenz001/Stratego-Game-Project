@@ -231,9 +231,9 @@
 
   <!-- <img v-on="{ mousedown, mouseup }" id="redMarshall" src="marshall3.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value-red="1"></div> -->
 
-  <img  id="redMarshall" class="redPiece" src="marshall3.png" draggable="true" ondragstart="drag(event)" ondrop="drop(captureRedPiece())" width="80" height="80" date-value-red="1"></div>
+  <img  id="redMarshall" src="marshall3.png" draggable="true" ondragstart="drag(event)" ondrop="drop(captureRedMarshall())" width="80" height="80" date-value-red="1"></div>
 
-  <img id="redGeneral"  src="general.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value-red="2"></div>
+  <img id="redGeneral"  src="general.png" draggable="true" ondragstart="drag(event)" ondrop="drop(captureRedGeneral())" width="80" height="80" date-value-red="2"></div>
 
   <img id="redColonel" src="Colonel 3.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value-red="3"></div>
   <img id="redColonel2" src="Colonel 3.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value-red="3"></div>
@@ -385,14 +385,18 @@ function waterDrop(ev) {
 }
 
 
-// function captureRedPiece(){
-//     $('#redMarshall').remove();
-//   }
+  function captureRedMarshall() {
+    var redMarshall = document.getElementById('redMarshall')
+    // if(red-data-value<=blue-data-value){
+    redMarshall.remove();
+  // }
+}
 
-  function captureRedPiece() {
-    // Removes an element from the document
-    var el = document.getElementById('redMarshall');
-    el.remove();
+function captureRedGeneral() {
+    var redGeneral = document.getElementById('redGeneral')
+    // if(red-data-value<=blue-data-value){
+    redGeneral.remove();
+  // }
 }
 
 
