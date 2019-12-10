@@ -25,7 +25,7 @@
   <p>Colonel; 3 (2x) <img  src="Colonel 3.png" width="100" height="100"></div></p>
   <p>Major; 4 (2x) <img  src="Major.png" width="100" height="100"></div></p> 
   <p>Captain;5 (Has a boat that crosses water) (4x) <img  src="wheel.png" width="100" height="100"></div></p>
-  <p>Lieutenant;6 (Can move 2 spaces) (4x) <img  src="spear4.png" width="200" height="200"></div></p>
+  <p>Lieutenant;6 (Can move 2 spaces and attack on same turn) (4x) <img  src="spear4.png" width="200" height="200"></div></p>
   <p>Sergeant;7 (Decreases the level of Marshal by 1 on attack) (4x) <img  src="sergeant2.png" width="100" height="100"></div></p>
   <p>Miner;8 (5x) <img  src="miner2.png" width="150" height="125"></div></p>
   <p>Scout;9 (Can move as much as they want) (6x) <img  src="scout3.png" width="200" height="100"></div></p>
@@ -37,6 +37,8 @@
 
 
 <h6>
+
+
   <img id="blueMarshal"  src="marshall3.png" draggable="true" ondragstart="drag(event)" ondrop="drop(captureBlueMarshall())" width="80" height="80" date-value-blue="1"></div>
 
   <img id="blueGeneral" src="general.png" draggable="true" ondragstart="drag(event)" ondrop="drop(captureBlueGeneral())" width="80" height="80" date-value-blue="2"></div>
@@ -373,6 +375,9 @@ function drop(ev) {
 function allowWaterDrop(ev) {
   if(blueCaptain || blueCaptain2 || blueCaptain3 || blueCaptain4 || redCaptain || redCaptain2 || redCaptain3 || redCaptain4){
   ev.preventDefault();
+  }else{
+    alert("This Piece Can Not Go Here.");
+    return false;
   }
 }
 
@@ -382,6 +387,9 @@ function waterDrop(ev) {
   var data = ev.dataTransfer.getData("text");
   ev.target.appendChild(document.getElementById(data));
   changeTurn();
+  }else{
+    alert("This Piece Can Not Go Here.");
+    return false;
   }
 }
 
