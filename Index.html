@@ -28,7 +28,7 @@
   <p>Major; 4 (2x) <img  src="Major.png" width="100" height="100"></div></p> 
   <p>Captain;5 (Has a boat that crosses water) (4x) <img  src="wheel.png" width="100" height="100"></div></p>
   <p>Lieutenant;6 (Can move 2 spaces and attack on same turn) (4x) <img  src="spear4.png" width="200" height="200"></div></p>
-  <p>Sergeant;7 (Decreases the level of Marshal by 1 on attack) (4x) <img  src="sergeant2.png" width="100" height="100"></div></p>
+  <p>Sergeant;7 (Decreases the level of Marshal by 1 on attack. This porcess can only be done once.) (4x) <img  src="sergeant2.png" width="100" height="100"></div></p>
   <p>Miner;8 (5x) <img  src="miner2.png" width="150" height="125"></div></p>
   <p>Scout;9 (Can move as much as they want) (6x) <img  src="scout3.png" width="200" height="100"></div></p>
   <p>Flag: the target of the game; completely stationary and can’t perform actions. (1x)</p>
@@ -386,24 +386,24 @@ function drop(ev) {
 }
 
 
-function allowWaterDrop(ev) {
-  if(blueCaptain || blueCaptain2 || blueCaptain3 || blueCaptain4 || redCaptain || redCaptain2 || redCaptain3 || redCaptain4){
-  ev.preventDefault();
-  }else{
-    alert("This Piece Can Not Go Here.");
-  }
-}
+// function allowWaterDrop(ev) {
+//   if(blueCaptain || blueCaptain2 || blueCaptain3 || blueCaptain4 || redCaptain || redCaptain2 || redCaptain3 || redCaptain4){
+//   ev.preventDefault();
+//   }else{
+//     alert("This Piece Can Not Go Here.");
+//   }
+// }
 
-function waterDrop(ev) {
-  if(blueCaptain || blueCaptain2 || blueCaptain3 || blueCaptain4 || redCaptain || redCaptain2 || redCaptain3 || redCaptain4){
-  ev.preventDefault();
-  var data = ev.dataTransfer.getData("text");
-  ev.target.appendChild(document.getElementById(data));
-  changeTurn();
-  }else{
-    alert("This Piece Can Not Go Here.");
-  }
-}
+// function waterDrop(ev) {
+//   if(blueCaptain || blueCaptain2 || blueCaptain3 || blueCaptain4 || redCaptain || redCaptain2 || redCaptain3 || redCaptain4){
+//   ev.preventDefault();
+//   var data = ev.dataTransfer.getData("text");
+//   ev.target.appendChild(document.getElementById(data));
+//   changeTurn();
+//   }else{
+//     alert("This Piece Can Not Go Here.");
+//   }
+// }
 
 
 // function capturePieces(){
@@ -413,6 +413,9 @@ function captureBlueMarshall() {
       if(redMarshall){
       blueMarshall.remove();
     }
+    // if(redSergeant){
+    //   blueMarshall == blueGeneral
+    // }
   }
 
   function captureBlueGeneral() {
@@ -425,6 +428,9 @@ function captureBlueMarshall() {
       if(blueMarshall){
       redMarshall.remove();
     }
+    // if(redSergeant){
+    //   redMarshall == redGeneral
+    // }
   }
 
   function captureRedGeneral() { 
@@ -442,6 +448,12 @@ function captureBlueMarshall() {
   function captureRedColonel2(){
     if(blueMarshall || blueGeneral || blueColonel || blueColonel2){
       redColonel2.remove();
+    }
+  }
+
+  function captureRedMajor(){
+    if(blueMarshall || blueGeneral || blueColonel || blueColonel2 || blueMajor || blueMajor2 || blueMajor || blueMajor2){
+      redMajor.remove()
     }
   }
   
