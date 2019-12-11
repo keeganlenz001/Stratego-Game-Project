@@ -18,7 +18,7 @@
   
 <h3>Each Player will start out with 30 pieces that occupy three rows on the board. The pieces can be arranged however the players want within the first 3 rows of the board.</h3>
 
-<h3>Each unit has a number value that determines strength; lower #  > higher power</h3>
+<h3>Each unit has a number value that determines strength; lower #  = higher power</h3>
 
 <h3>The (x) signifies the number of pieces, while the number after the semi-colon determines the attack power.</h3>
 
@@ -34,7 +34,6 @@
   <p>Flag: the target of the game; completely stationary and can’t perform actions. (1x)</p>
 
 <h3>Encounters can be triggered by a unit attacking another. The lower number between the units wins. If their numbers are equal, both units die. If the unit who started the encounter wins, they take the loser’s place. If the attacked unit wins, they stay in the same place and don’t move.</h3>
-<!-- <h3>Note: The game will start with the turn box grey. It's up to you to decide who will go first.</h3> -->
 
 
 
@@ -234,7 +233,6 @@
 
 <h4>
 
-  <!-- <img v-on="{ mousedown, mouseup }" id="redMarshall" src="marshall3.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value-red="1"></div> -->
 
   <img  id="redMarshall" src="marshall3.png" draggable="true" ondragstart="drag(event)" ondrop="drop(captureRedMarshall())" width="80" height="80" date-value-red="1"></div>
 
@@ -289,23 +287,6 @@ var scale = 'scale(1)';
 document.body.style.webkitTransform =  scale; 
 
 
-// methods: {
-//     mousemove(e); {
-//         const moved = e.offset0px - this.start100px;
-//         // The mouse has moved "moved" pixels.
-//         // Now calculate whatever you want 
-//     }
-//     mousedown(e); {
-//         this.start100px = e.offset0px;
-
-//         e.currentTarget.addEventListener(this.mousemove);
-//     }
-//     mouseup(e); {
-//         e.currentTarget.removeEventListener(this.mousemove);
-//     }
-// }
-
-
 function allowDrop(ev) {
   ev.preventDefault();
 }
@@ -316,52 +297,11 @@ function drag(ev) {
 }
 
 
-// function Drop(ev) {
-//       ev.preventDefault();
-//       var data = ev.dataTransfer.getData("text");  
-//       if ($(this).attr("class") === "chessboard") {
-//       	ev.target.appendChild(document.getElementById(data));
-//       }
-//       if ( ev.target.getAttribute('data-boxtype') ==  document.getElementById(data).getAttribute('data-appendto')) {
-//             ev.target.appendChild(document.getElementById(data));
-//     	}
-//       changeTurn();
-//     }
-
-
-//     var elemens = document.querySelectorAll('.draggable');
-//     [].forEach.call(elemens, function(elem) {
-//       elem.addEventListener('dragover', DragOver, false);
-//       elem.addEventListener('drop', Drop, false);
-//     });
-
-
 function drop(ev) {
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
   ev.target.appendChild(document.getElementById(data));
   changeTurn();
-  
-  // if(data-value-blue<data-value-red){
-  //   $( "div" ).remove( ".redPiece" );
-  // }
-
-  // if(data-value-red<data-value-blue){
-  //   $( "div" ).remove( ".bluePiece" );
-  // }
-
-  // if(data-value-red === data-value-blue){
-  //   $( "div" ).remove( ".redPiece" );
-  //   $( "div" ).remove( ".bluePiece" );
-  //}
-
-  //if(data-value-red === 8 bluePiece = $(" redPiece ") = $("redMarshall ")){
-  //   data-value-blue === data-value-blue+1
-  // }
-
-  //if(data-value-blue === 8 & $( "bluePiece" ) = $( "blueMarshall" )){
-  //   data-value-red === data-value-red+1
-  // }
 }
 
   var blueCaptain = document.getElementById('blueCaptain');
