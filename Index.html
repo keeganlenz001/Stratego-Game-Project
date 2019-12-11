@@ -234,15 +234,15 @@
 <h4>
 
 
-  <img  id="redMarshall" src="marshall3.png" draggable="true" ondragstart="drag(event)" ondrop="drop(captureRedMarshall())" width="80" height="80" date-value-red="1"></div>
+  <img  id="redMarshall" src="marshall3.png" draggable="true" ondragstart="drag(event)" ondrop="drop(captureRedMarshall())" width="80" height="80"></div>
 
-  <img id="redGeneral"  src="general.png" draggable="true" ondragstart="drag(event)" ondrop="drop(captureRedGeneral())" width="80" height="80" date-value-red="2"></div>
+  <img id="redGeneral"  src="general.png" draggable="true" ondragstart="drag(event)" ondrop="drop(captureRedGeneral())" width="80" height="80"></div>
 
-  <img id="redColonel" src="Colonel 3.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value-red="3"></div>
-  <img id="redColonel2" src="Colonel 3.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value-red="3"></div>
+  <img id="redColonel" src="Colonel 3.png" draggable="true" ondragstart="drag(event)" ondrop="drop(caputureRedColonel())" width="80" height="80"></div>
+  <img id="redColonel2" src="Colonel 3.png" draggable="true" ondragstart="drag(event)" ondrop="drop(caputureRedColonel2())" width="80" height="80"></div>
 
-  <img id="redMajor" src="Major.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value-red="4"></div>
-  <img id="redMajor2" src="Major.png" draggable="true" ondragstart="drag(event)" width="80" height="80" date-value-red="4"></div>
+  <img id="redMajor" src="Major.png" draggable="true" ondragstart="drag(event)" width="80" height="80"></div>
+  <img id="redMajor2" src="Major.png" draggable="true" ondragstart="drag(event)" width="80" height="80"></div>
 
   <img id="redWheel" src="wheel.png" draggable="true" ondragstart="drag(event)" width="80" height="80" data-value-red="5"></div>
   <img id="redWheel2" src="wheel.png" draggable="true" ondragstart="drag(event)" width="80" height="80" data-value-red="5"></div>
@@ -287,54 +287,7 @@ var scale = 'scale(1)';
 document.body.style.webkitTransform =  scale; 
 
 
-function allowDrop(ev) {
-  ev.preventDefault();
-}
 
-
-function drag(ev) {
-  ev.dataTransfer.setData("text", ev.target.id);
-}
-
-
-function drop(ev) {
-  ev.preventDefault();
-  var data = ev.dataTransfer.getData("text");
-  ev.target.appendChild(document.getElementById(data));
-  changeTurn();
-}
-
-  var blueCaptain = document.getElementById('blueCaptain');
-  var blueCaptain2 = document.getElementById('blueCaptain2');
-  var blueCaptain3 = document.getElementById('blueCaptain3');
-  var blueCaptain4 = document.getElementById('blueCaptain4');
-
-  var redCaptain = document.getElementById('redWheel');
-  var redCaptain2 = document.getElementById('redWheel2');
-  var redCaptain3 = document.getElementById('redWheel3');
-  var redCaptain4 = document.getElementById('redWheel4');
-
-function allowWaterDrop(ev) {
-  if(blueCaptain || blueCaptain2 || blueCaptain3 || blueCaptain4 || redCaptain || redCaptain2 || redCaptain3 || redCaptain4){
-  ev.preventDefault();
-  }else{
-    alert("This Piece Can Not Go Here.");
-  }
-}
-
-function waterDrop(ev) {
-  if(blueCaptain || blueCaptain2 || blueCaptain3 || blueCaptain4 || redCaptain || redCaptain2 || redCaptain3 || redCaptain4){
-  ev.preventDefault();
-  var data = ev.dataTransfer.getData("text");
-  ev.target.appendChild(document.getElementById(data));
-  changeTurn();
-  }else{
-    alert("This Piece Can Not Go Here.");
-  }
-}
-
-
-// function capturePieces(){
 
 var blueMarshall = document.getElementById("blueMarshal")
 
@@ -415,30 +368,84 @@ var redScout5 = document.getElementById('redScout5')
 var redScout6 = document.getElementById('redScout6')
 
 
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+  changeTurn();
+}
+
+
+function allowWaterDrop(ev) {
+  if(blueCaptain || blueCaptain2 || blueCaptain3 || blueCaptain4 || redCaptain || redCaptain2 || redCaptain3 || redCaptain4){
+  ev.preventDefault();
+  }else{
+    alert("This Piece Can Not Go Here.");
+  }
+}
+
+function waterDrop(ev) {
+  if(blueCaptain || blueCaptain2 || blueCaptain3 || blueCaptain4 || redCaptain || redCaptain2 || redCaptain3 || redCaptain4){
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+  changeTurn();
+  }else{
+    alert("This Piece Can Not Go Here.");
+  }
+}
+
+
+// function capturePieces(){
+
+
+function captureBlueMarshall() {
+      if(redMarshall){
+      blueMarshall.remove();
+    }
+  }
+
+  function captureBlueGeneral() {
+      if(redMarshall || redGeneral){
+      blueGeneral.remove();
+    }
+  }
+
   function captureRedMarshall() {
       if(blueMarshall){
       redMarshall.remove();
     }
   }
 
-  function captureRedGeneral() 
+  function captureRedGeneral() { 
       if(blueMarshall || blueGeneral){
       redGeneral.remove();
     }
   }
 
-
-  function captureBlueMarshall() {
-      if(red-data-value<=blue-data-value){
-      blueMarshall.remove();
+  function caputureRedColonel() {
+    if(blueMarshall || blueGeneral || blueColonel || blueColonel2){
+      redColonel.remove();
     }
   }
 
-  function captureBlueGeneral() {
-      if(red-data-value<=blue-data-value){
-      blueGeneral.remove();
+  function captureRedColonel2(){
+    if(blueMarshall || blueGeneral || blueColonel || blueColonel2){
+      redColonel2.remove();
     }
   }
+  
+
 // }
 
 
