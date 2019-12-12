@@ -145,14 +145,14 @@
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-<div class="darkBlue"ondrop="waterDrop(event)" ondragover="allowWaterDrop(event)"></div>
-<div class="lightBlue"ondrop="waterDrop(event)" ondragover="allowWaterDrop(event)"></div>
+<div class="darkBlue"ondrop="drop(event)" ondragover="allowDrop(event)" data-boxtype="water"></div>
+<div class="lightBlue"ondrop="drop(event)" ondragover="allowDrop(event)" data-boxtype="water"></div>
 
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-<div class="darkBlue"ondrop="waterDrop(event)" ondragover="allowWaterDrop(event)"></div>
-<div class="lightBlue"ondrop="waterDrop(event)" ondragover="allowWaterDrop(event)"></div>
+<div class="darkBlue"ondrop="drop(event)" ondragover="allowDrop(event)" data-boxtype="water"></div>
+<div class="lightBlue"ondrop="drop(event)" ondragover="allowDrop(event)" data-boxtype="water"></div>
 
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -162,14 +162,14 @@
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-<div class="lightBlue"ondrop="waterDrop(event)" ondragover="allowWaterDrop(event)"></div>
-<div class="darkBlue"ondrop="waterDrop(event)" ondragover="allowWaterDrop(event)"></div>
+<div class="lightBlue"ondrop="drop(event)" ondragover="allowDrop(event)" data-boxtype="water"></div>
+<div class="darkBlue"ondrop="drop(event)" ondragover="allowDrop(event)" data-boxtype="water"></div>
 
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-<div class="lightBlue"ondrop="waterDrop(event)" ondragover="allowWaterDrop(event)"></div>
-<div class="darkBlue"ondrop="waterDrop(event)" ondragover="allowWaterDrop(event)"></div>
+<div class="lightBlue"ondrop="waterdrop(event)" ondragover="allowDrop(event)" data-boxtype="water"></div>
+<div class="darkBlue"ondrop="waterdrop(event)" ondragover="allowDrop(event)" data-boxtype="water"></div>
 
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -222,7 +222,7 @@
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-<div class="white"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div class="white"ondrop="drop(event)" ondragover="allowDrop(event)" data-boxtype="land"></div>
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
 </div>
@@ -234,9 +234,9 @@
 <h4>
 
 
-  <img  id="redMarshall" src="marshall3.png" draggable="true" ondragstart="drag(event)" ondrop="drop(captureRedMarshall())" width="80" height="80"></div>
+  <img  id="redMarshall" src="marshall3.png" draggable="true" ondragstart="drag(event)" ondrop="drop(captureRedMarshall())" data-appendto="land" width="80" height="80"></div>
 
-  <img id="redGeneral"  src="general.png" draggable="true" ondragstart="drag(event)" ondrop="drop(captureRedGeneral())" width="80" height="80"></div>
+  <img id="redGeneral"  src="general.png" draggable="true" ondragstart="drag(event)" ondrop="drop(captureRedGeneral())" data-appendto="land" width="80" height="80"></div>
 
   <img id="redColonel" src="Colonel 3.png" draggable="true" ondragstart="drag(event)" ondrop="drop(caputureRedColonel())" width="80" height="80"></div>
   <img id="redColonel2" src="Colonel 3.png" draggable="true" ondragstart="drag(event)" ondrop="drop(caputureRedColonel2())" width="80" height="80"></div>
@@ -244,10 +244,10 @@
   <img id="redMajor" src="Major.png" draggable="true" ondragstart="drag(event)" width="80" height="80"></div>
   <img id="redMajor2" src="Major.png" draggable="true" ondragstart="drag(event)" width="80" height="80"></div>
 
-  <img id="redWheel" src="wheel.png" draggable="true" ondragstart="drag(event)" width="80" height="80" data-value-red="5"></div>
-  <img id="redWheel2" src="wheel.png" draggable="true" ondragstart="drag(event)" width="80" height="80" data-value-red="5"></div>
-  <img id="redWheel3" src="wheel.png" draggable="true" ondragstart="drag(event)" width="80" height="80" data-value-red="5"></div>
-  <img id="redWheel4" src="wheel.png" draggable="true" ondragstart="drag(event)" width="80" height="80" data-value-red="5"></div>
+  <img id="redWheel" src="wheel.png" draggable="true" ondragstart="drag(event)" width="80" height="80"  data-appendto="land" data-appendto2="water"></div>
+  <img id="redWheel2" src="wheel.png" draggable="true" ondragstart="drag(event)" width="80" height="80"  data-appendto="land" data-appendto2="water"></div>
+  <img id="redWheel3" src="wheel.png" draggable="true" ondragstart="drag(event)" width="80" height="80" data-appendto="land" data-appendto2="water"></div>
+  <img id="redWheel4" src="wheel.png" draggable="true" ondragstart="drag(event)" width="80" height="80" data-appendto="land" data-appendto2="water"></div>
 
   <img id="redSpear"  src="spear4.png" draggable="true" ondragstart="drag(event)" width="80" height="80" data-value-red="6"></div>
   <img id="redSpear2"  src="spear4.png" draggable="true" ondragstart="drag(event)" width="80" height="80" data-value-red="6"></div>
@@ -381,29 +381,35 @@ function drag(ev) {
 function drop(ev) {
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
+  if(ev.target.getAttribute('data-boxtype') ==  document.getElementById(data).getAttribute('data-appendto')){
   ev.target.appendChild(document.getElementById(data));
   changeTurn();
-}
-
-
-function allowWaterDrop(ev) {
-  if(document.getElementById('blueCaptain').value ="true"){
-  ev.preventDefault();
-  }else{
-    alert("This Piece Can Not Go Here.");
+  }
+  if ( ev.target.getAttribute('data-boxtype') ==  document.getElementById(data).getAttribute('data-appendto2')) {
+  ev.target.appendChild(document.getElementById(data));
+  changeTurn();
   }
 }
 
-function waterDrop(ev) {
-  if(document.getElementById('blueCaptain').value ="true"){
-  ev.preventDefault();
-  var data = ev.dataTransfer.getData("text");
-  ev.target.appendChild(document.getElementById(data));
-  changeTurn();
-  }else{
-    alert("This Piece Can Not Go Here.");
-  }
-}
+
+// function allowWaterDrop(ev) {
+//   if(document.getElementById('blueCaptain').value ="true"){
+//   ev.preventDefault();
+//   }else{
+//     alert("This Piece Can Not Go Here.");
+//   }
+// }
+
+// function waterDrop(ev) {
+//   if(document.getElementById('blueCaptain').value ="true"){
+//   ev.preventDefault();
+//   var data = ev.dataTransfer.getData("text");
+//   ev.target.appendChild(document.getElementById(data));
+//   changeTurn();
+//   }else{
+//     alert("This Piece Can Not Go Here.");
+//   }
+// }
 
 
 // function capturePieces(){
