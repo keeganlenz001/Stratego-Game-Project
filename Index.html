@@ -40,9 +40,9 @@
 <h6>
 
 
-  <img id="blueMarshal"  src="marshall3.png" draggable="false" ondragstart="drag(event)" ondrop="drop(captureBlueMarshall())" data-appendto="land" width="80" height="80" ></div>
+  <img id="blueMarshal"  src="marshall3.png" draggable="false" ondragstart="drag(event)"data-appendto="land" width="80" height="80" ></div>
 
-  <img id="blueGeneral" src="general.png" draggable="false" ondragstart="drag(event)" ondrop="drop(captureBlueGeneral())" data-appendto="land" width="80" height="80" ></div>
+  <img id="blueGeneral" src="general.png" draggable="false" ondragstart="drag(event)" data-appendto="land" width="80" height="80" ></div>
 
   <img id="blueColonel" src="Colonel 3.png" draggable="false" ondragstart="drag(event)" data-appendto="land" width="80" height="80" ></div>
   <img id="blueColonel2" src="Colonel 3.png" draggable="false" ondragstart="drag(event)" data-appendto="land" width="80" height="80" ></div>
@@ -234,12 +234,12 @@
 <h4>
 
 
-  <img  id="redMarshall" src="marshall3.png" draggable="true" ondragstart="drag(event)" ondrop="drop(captureRedMarshall())" data-appendto="land" width="80" height="80"></div>
+  <img  id="redMarshall" src="marshall3.png" draggable="true" ondragstart="drag(event)" ondrop="drop(combat())" data-appendto="land" width="80" height="80"></div>
 
-  <img id="redGeneral"  src="general.png" draggable="true" ondragstart="drag(event)" ondrop="drop(captureRedGeneral())" data-appendto="land" width="80" height="80"></div>
+  <img id="redGeneral"  src="general.png" draggable="true" ondragstart="drag(event)" data-appendto="land" width="80" height="80"></div>
 
-  <img id="redColonel" src="Colonel 3.png" draggable="true" ondragstart="drag(event)" ondrop="drop(caputureRedColonel())" data-appendto="land" width="80" height="80"></div>
-  <img id="redColonel2" src="Colonel 3.png" draggable="true" ondragstart="drag(event)" ondrop="drop(caputureRedColonel2())" data-appendto="land" width="80" height="80"></div>
+  <img id="redColonel" src="Colonel 3.png" draggable="true" ondragstart="drag(event)" data-appendto="land" width="80" height="80"></div>
+  <img id="redColonel2" src="Colonel 3.png" draggable="true" ondragstart="drag(event)" data-appendto="land" width="80" height="80"></div>
 
   <img id="redMajor" src="Major.png" draggable="true" ondragstart="drag(event)" data-appendto="land" width="80" height="80"></div>
   <img id="redMajor2" src="Major.png" draggable="true" ondragstart="drag(event)" data-appendto="land" width="80" height="80"></div>
@@ -314,53 +314,51 @@ function drop(ev) {
 // function capturePieces(){
 
 
-function captureBlueMarshall() {
-      if(redMarshall){
-      blueMarshall.remove();
-    }
-    // if(redSergeant){
-    //   blueMarshall == blueGeneral
-    // }
+function combat(){
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  if(ev.target.getAttribute('data-combatant') ==  document.getElementById(data).getAttribute('data-comabat1')){
+  ev.target.appendChild(document.getElementById(data));
+  changeTurn();
+  removeChild();
   }
-
-  function captureBlueGeneral() {
-      if(redMarshall || redGeneral){
-      blueGeneral.remove();
-    }
+  if ( ev.target.getAttribute('data-combatant') ==  document.getElementById(data).getAttribute('data-combat2')) {
+  ev.target.appendChild(document.getElementById(data));
+  changeTurn();
   }
-
-  function captureRedMarshall() {
-      if(blueMarshall){
-      redMarshall.remove();
-    }
-    // if(redSergeant){
-    //   redMarshall == redGeneral
-    // }
+  if ( ev.target.getAttribute('data-comabatant') ==  document.getElementById(data).getAttribute('data-comabt3')) {
+  ev.target.appendChild(document.getElementById(data));
+  changeTurn();
   }
-
-  function captureRedGeneral() { 
-      if(blueMarshall || blueGeneral){
-      redGeneral.remove();
-    }
+  if ( ev.target.getAttribute('data-combatant') ==  document.getElementById(data).getAttribute('data-combat4')) {
+  ev.target.appendChild(document.getElementById(data));
+  changeTurn();
   }
-
-  function caputureRedColonel() {
-    if(blueMarshall || blueGeneral || blueColonel || blueColonel2){
-      redColonel.remove();
-    }
+  if ( ev.target.getAttribute('data-combatant') ==  document.getElementById(data).getAttribute('data-combat5')) {
+  ev.target.appendChild(document.getElementById(data));
+  changeTurn();
   }
-
-  function captureRedColonel2(){
-    if(blueMarshall || blueGeneral || blueColonel || blueColonel2){
-      redColonel2.remove();
-    }
+  if ( ev.target.getAttribute('data-combatant') ==  document.getElementById(data).getAttribute('data-combat6')) {
+  ev.target.appendChild(document.getElementById(data));
+  changeTurn();
   }
-
-  function captureRedMajor(){
-    if(blueMarshall || blueGeneral || blueColonel || blueColonel2 || blueMajor || blueMajor2 || blueMajor || blueMajor2){
-      redMajor.remove()
-    }
+  if ( ev.target.getAttribute('data-combatant') ==  document.getElementById(data).getAttribute('data-combat7')) {
+  ev.target.appendChild(document.getElementById(data));
+  changeTurn();
   }
+  if ( ev.target.getAttribute('data-combatant') ==  document.getElementById(data).getAttribute('data-combat8')) {
+  ev.target.appendChild(document.getElementById(data));
+  changeTurn();
+  }
+  if ( ev.target.getAttribute('data-combatant') ==  document.getElementById(data).getAttribute('data-combat8')) {
+  ev.target.appendChild(document.getElementById(data));
+  changeTurn();
+  }
+  if ( ev.target.getAttribute('data-combatant') ==  document.getElementById(data).getAttribute('data-combat9')) {
+  ev.target.appendChild(document.getElementById(data));
+  changeTurn();
+  }
+}
   
 
 // }
