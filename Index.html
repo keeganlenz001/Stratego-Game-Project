@@ -35,12 +35,12 @@
 
 <h3>Encounters can be triggered by a unit attacking another. The lower number between the units wins. If their numbers are equal, both units die. If the unit who started the encounter wins, they take the loser’s place. If the attacked unit wins, they stay in the same place and don’t move.</h3>
 
-
+<button onclick="removeRedMarshall();">Remove Red Marshall?</button>
 
 <h6>
 
 
-  <img id="blueMarshal"  src="marshall3.png" draggable="false" ondragstart="drag(event)"data-appendto="land" width="80" height="80" ></div>
+  <div id="blueMarshal" draggable="false" ondragstart="drag(event)"data-appendto="land" width="80" height="80" >blue Marshall</div>
 
   <img id="blueGeneral" src="general.png" draggable="false" ondragstart="drag(event)" data-appendto="land" width="80" height="80" ></div>
 
@@ -234,7 +234,7 @@
 <h4>
 
 
-  <img  id="redMarshall" src="marshall3.png" draggable="true" ondragstart="drag(event)" ondrop="drop(combat())" data-appendto="land" width="80" height="80"></div>
+  <div  id="redMarshall" draggable="true" ondragstart="drag(event)" ondrop="drop(combat())" data-appendto="land" width="80" height="80">Red Marshall</div>
 
   <img id="redGeneral"  src="general.png" draggable="true" ondragstart="drag(event)" data-appendto="land" width="80" height="80"></div>
 
@@ -293,7 +293,7 @@ function allowDrop(ev) {
 
 
 function drag(ev) {
-  ev.dataTransfer.setData("text", ev.target.id);
+  ev.dataTransfer.setData("Text", ev.target.id);
 }
 
 
@@ -308,6 +308,12 @@ function drop(ev) {
   ev.target.appendChild(document.getElementById(data));
   changeTurn();
   }
+}
+
+
+function removeRedMarshall(){
+  var redMarshall = document.getElementById("redMarshall");
+  redMarshall.remove();
 }
 
 
@@ -577,10 +583,12 @@ h2 {
 
 h6 {
   background-color: rgb(100,100,255);
+  font-size: 25px;
 }
 
 h4 {
   background-color: rgb(255,100,100);
+  font-size: 25px;
 }
 
 h5 {
@@ -819,3 +827,78 @@ transform: scale(1.25);
 
   </body>
 </html>
+
+
+<!-- <!DOCTYPE HTML>
+<html>
+<head>
+<style>
+.droptarget {
+  float: left; 
+  width: 100px; 
+  height: 100px;
+  margin: 15px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+  background-color: lightgreen;
+}
+
+.droptarget2 {
+  float: left; 
+  width: 100px; 
+  height: 100px;
+  margin: 15px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+  background-color: lightyellow;
+}
+
+#dragtarget {
+	background-color: lightblue;
+}
+    
+#dragtarget2 {
+	background-color: lightcoral;
+}
+
+</style>
+</head>
+<body>
+
+<button onclick="removeDropTarget();">remove</button>
+
+<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <p ondragstart="dragStart(event)" draggable="true" id="dragtarget">Drag me!</p>
+  </div>
+  
+  <div class="droptarget2" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <p ondragstart="dragStart(event)" draggable="true" id="dragtarget2">Drag me!</p>
+</div>
+
+
+
+
+<script>
+function dragStart(event) {
+  event.dataTransfer.setData("Text", event.target.id);
+}
+
+function allowDrop(event) {
+  event.preventDefault();
+}
+
+function drop(event) {
+  event.preventDefault();
+  var data = event.dataTransfer.getData("Text");
+  event.target.appendChild(document.getElementById(data));
+}
+
+function removeDropTarget(){
+var dragtarget = document.getElementById("dragtarget");
+dragtarget.remove();
+}
+
+</script>
+
+</body>
+</html> -->
