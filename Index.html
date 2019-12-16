@@ -26,21 +26,20 @@
   <p>General; 2 (1x) <img  src="general.png" width="100" height="100"></div></p>
   <p>Colonel; 3 (2x) <img  src="Colonel 3.png" width="100" height="100"></div></p>
   <p>Major; 4 (2x) <img  src="Major.png" width="100" height="100"></div></p> 
-  <p>Captain; 5 (Has a boat that crosses water) (4x) <img  src="wheel.png" width="100" height="100"></div></p>
-  <p>Lieutenant;  6 (Can move 2 spaces and attack on same turn) (4x) <img  src="spear4.png" width="200" height="200"></div></p>
-  <p>Sergeant; 7 (Decreases the level of Marshal by 1 on attack. This porcess can only be done once.) (4x) <img  src="sergeant2.png" width="100" height="100"></div></p>
-  <p>Miner; 8 (5x) <img  src="miner2.png" width="150" height="125"></div></p>
-  <p>Scout; 9 (Can move as much as they want) (6x) <img  src="scout3.png" width="200" height="100"></div></p>
+  <p>Captain;5 (Has a boat that crosses water) (4x) <img  src="wheel.png" width="100" height="100"></div></p>
+  <p>Lieutenant;6 (Can move 2 spaces and attack on same turn) (4x) <img  src="spear4.png" width="200" height="200"></div></p>
+  <p>Sergeant;7 (Decreases the level of Marshal by 1 on attack. This porcess can only be done once.) (4x) <img  src="sergeant2.png" width="100" height="100"></div></p>
+  <p>Miner;8 (5x) <img  src="miner2.png" width="150" height="125"></div></p>
+  <p>Scout;9 (Can move as much as they want) (6x) <img  src="scout3.png" width="200" height="100"></div></p>
   <p>Flag: the target of the game; completely stationary and can’t perform actions. (1x)</p>
 
 <h3>Encounters can be triggered by a unit attacking another. The lower number between the units wins. If their numbers are equal, both units die. If the unit who started the encounter wins, they take the loser’s place. If the attacked unit wins, they stay in the same place and don’t move.</h3>
 
-<button onclick="removeRedMarshall();">Remove Red Marshall?</button>
 
 <h6>
 
 
-  <div id="blueMarshal" draggable="false" ondragstart="drag(event)"data-appendto="land" width="80" height="80" >blue Marshall</div>
+  <img id="blueMarshal" src="marshall3.png" draggable="false" ondragstart="drag(event)"data-appendto="land" width="80" height="80" ></div>
 
   <img id="blueGeneral" src="general.png" draggable="false" ondragstart="drag(event)" data-appendto="land" width="80" height="80" ></div>
 
@@ -234,7 +233,8 @@
 <h4>
 
 
-  <div  id="redMarshall" draggable="true" ondragstart="drag(event)" ondrop="drop(combat())" data-appendto="land" width="80" height="80">Red Marshall</div>
+  <img  id="redMarshall" src="marshall3.png" draggable="true" ondragstart="drag(event)" ondrop="drop(captureRedMarshall())" data-appendto="land" width="80" height="80"
+  eliminates="blueMarshall" eliminatedBy="blueMarshall"></div>
 
   <img id="redGeneral"  src="general.png" draggable="true" ondragstart="drag(event)" data-appendto="land" width="80" height="80"></div>
 
@@ -287,6 +287,85 @@ var scale = 'scale(1)';
 document.body.style.webkitTransform =  scale; 
 
 
+// function definePieces(){
+
+//   var blueGeneral = document.getElementById('blueGeneral').value= "false"
+
+//   var blueColonel = document.getElementById('blueColonel').value= "false"
+//   var blueColonel = document.getElementById('blueColonel2').value= "false"
+
+//   var blueMajor = document.getElementById('blueMajor').value= "false"
+//   var blueMajor2 = document.getElementById('blueMajor2').value= "false"
+
+//   var blueCaptain = document.getElementById('blueCaptain').value= "true"
+//   var blueCaptain2 = document.getElementById('blueCaptain2').value= "true"
+//   var blueCaptain3 = document.getElementById('blueCaptain3').value= "true"
+//   var blueCaptain4 = document.getElementById('blueCaptain4').value= "true"
+
+//   var blueLieutenant = document.getElementById('blueLieutenant').value= "false"
+//   var blueLieutenant2 = document.getElementById('blueLieutenant2').value= "false"
+//   var blueLieutenant3 = document.getElementById('blueLieutenant3').value= "false"
+//   var blueLieutenant4 = document.getElementById('blueLieutenant4').value= "false"
+
+//   var blueSergeant = document.getElementById('blueSergeant').value= "false"
+//   var blueSergeant2 = document.getElementById('blueSergeant2').value= "false"
+//   var blueSergeant3 = document.getElementById('blueSergeant3').value= "false"
+//   var blueSergeant4 = document.getElementById('blueSergeant4').value= "false"
+
+//   var blueMiner = document.getElementById('blueMiner').value= "false"
+//   var blueMiner2 = document.getElementById('blueMiner2').value= "false"
+//   var blueMiner3 = document.getElementById('blueMiner3').value= "false"
+//   var blueMiner4 = document.getElementById('blueMiner4').value= "false"
+//   var blueMiner5 = document.getElementById('blueMiner5').value= "false"
+
+//   var blueScout = document.getElementById('blueScout').value= "false"
+//   var blueScout2 = document.getElementById('blueScout2').value= "false"
+//   var blueScout3 = document.getElementById('blueScout3').value= "false"
+//   var blueScout4 = document.getElementById('blueScout4').value= "false"
+//   var blueScout5 = document.getElementById('blueScout5').value= "false"
+//   var blueScout6 = document.getElementById('blueScout6').value= "false"
+
+
+
+//   var redMarshall = document.getElementById('redMarshall').value= "false"
+
+//   var redGeneral = document.getElementById('redGeneral').value= "false"
+
+//   var redColonel = document.getElementById('redColonel').value= "false"
+//   var redColonel2 = document.getElementById('redColonel2').value= "false"
+
+//   var redMajor = document.getElementById('redMajor').value= "false"
+//   var redMajor2 = document.getElementById('redMajor2').value= "false"
+
+//   var redCaptain = document.getElementById('redWheel').value= "true"
+//   var redCaptain2 = document.getElementById('redWheel2').value= "true"
+//   var redCaptain3 = document.getElementById('redWheel3').value= "true"
+//   var redCaptain4 = document.getElementById('redWheel4').value= "true"
+
+//   var redLieutenant = document.getElementById('redSpear').value= "false"
+//   var redLieutenant2 = document.getElementById('redSpear2').value= "false"
+//   var redLieutenant3 = document.getElementById('redSpear3').value= "false"
+//   var redLieutenant4 = document.getElementById('redSpear4').value= "false"
+
+//   var redSergeant = document.getElementById('redSergeant').value= "false"
+//   var redSergeant2 = document.getElementById('redSergeant2').value= "false"
+//   var redSergeant3 = document.getElementById('redSergeant3').value= "false"
+//   var redSergeant4 = document.getElementById('redSergeant4').value= "false"
+
+//   var redMiner = document.getElementById('redMiner').value= "false"
+//   var redMiner2 = document.getElementById('redMiner2').value= "false"
+//   var redMiner3 = document.getElementById('redMiner3').value= "false"
+//   var redMiner4 = document.getElementById('redMiner4').value= "false"
+//   var redMiner5 = document.getElementById('redMiner5').value= "false"
+
+//   var redScout = document.getElementById('redScout').value= "false"
+//   var redScout2 = document.getElementById('redScout2').value= "false"
+//   var redScout3 = document.getElementById('redScout3').value= "false"
+//   var redScout4 = document.getElementById('redScout4').value= "false"
+//   var redScout5 = document.getElementById('redScout5').value= "false"
+//   var redScout6 = document.getElementById('redScout6').value= "false" 
+// }
+
 function allowDrop(ev) {
   ev.preventDefault();
 }
@@ -311,56 +390,14 @@ function drop(ev) {
 }
 
 
-function removeRedMarshall(){
-  var redMarshall = document.getElementById("redMarshall");
-  redMarshall.remove();
-}
-
-
 // function capturePieces(){
 
 
-function combat(){
+function captureRedMarshall() {
   ev.preventDefault();
-  var data = ev.dataTransfer.getData("text");
-  if(ev.target.getAttribute('data-combatant') ==  document.getElementById(data).getAttribute('data-comabat1')){
-  ev.target.appendChild(document.getElementById(data));
-  changeTurn();
-  removeChild();
-  }
-  if ( ev.target.getAttribute('data-combatant') ==  document.getElementById(data).getAttribute('data-combat2')) {
-  ev.target.appendChild(document.getElementById(data));
-  changeTurn();
-  }
-  if ( ev.target.getAttribute('data-comabatant') ==  document.getElementById(data).getAttribute('data-comabt3')) {
-  ev.target.appendChild(document.getElementById(data));
-  changeTurn();
-  }
-  if ( ev.target.getAttribute('data-combatant') ==  document.getElementById(data).getAttribute('data-combat4')) {
-  ev.target.appendChild(document.getElementById(data));
-  changeTurn();
-  }
-  if ( ev.target.getAttribute('data-combatant') ==  document.getElementById(data).getAttribute('data-combat5')) {
-  ev.target.appendChild(document.getElementById(data));
-  changeTurn();
-  }
-  if ( ev.target.getAttribute('data-combatant') ==  document.getElementById(data).getAttribute('data-combat6')) {
-  ev.target.appendChild(document.getElementById(data));
-  changeTurn();
-  }
-  if ( ev.target.getAttribute('data-combatant') ==  document.getElementById(data).getAttribute('data-combat7')) {
-  ev.target.appendChild(document.getElementById(data));
-  changeTurn();
-  }
-  if ( ev.target.getAttribute('data-combatant') ==  document.getElementById(data).getAttribute('data-combat8')) {
-  ev.target.appendChild(document.getElementById(data));
-  changeTurn();
-  }
-  if ( ev.target.getAttribute('data-combatant') ==  document.getElementById(data).getAttribute('data-combat8')) {
-  ev.target.appendChild(document.getElementById(data));
-  changeTurn();
-  }
-  if ( ev.target.getAttribute('data-combatant') ==  document.getElementById(data).getAttribute('data-combat9')) {
+  var blueMarshall = document.getElementById("blueMarshal")
+  if ( ev.target.getAttribute('eliminates') ==  document.getElementById(data).getAttribute('eliminatedBy')) {
+  blueMarshall.remove();
   ev.target.appendChild(document.getElementById(data));
   changeTurn();
   }
