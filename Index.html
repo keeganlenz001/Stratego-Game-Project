@@ -279,10 +279,14 @@
     </div>
 
 
-<button onclick="blueMarshall.remove();">remove blueMarshall<button>
+    <button onclick="removeBlueMarshall()">click here</button> 
 
 
 <script>
+
+function removeBlueMarshall(){
+  blueMarshall.remove();
+}
 
 document.body.style.zoom = .7
 
@@ -290,7 +294,7 @@ var scale = 'scale(1)';
 document.body.style.webkitTransform =  scale; 
 
 
-function definePieces(){
+
 
   var blueMarshall = document.getElementById('blueMarshal')
 
@@ -369,7 +373,9 @@ function definePieces(){
   var redScout4 = document.getElementById('redScout4')
   var redScout5 = document.getElementById('redScout5')
   var redScout6 = document.getElementById('redScout6') 
-}
+
+
+
 
 function allowDrop(ev) {
   ev.preventDefault();
