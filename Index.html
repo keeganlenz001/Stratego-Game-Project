@@ -392,12 +392,11 @@ function drop(ev) {
 // function capturePieces(){
 
 
-function captureRedMarshall() {
-  ev.preventDefault();
-  var blueMarshall = document.getElementById("blueMarshal")
-  if ( ev.target.getAttribute('eliminates') ==  document.getElementById(data).getAttribute('eliminatedBy')) {
+function combat() {
+  if ( ev.target.getAttribute('combat-boxtype') ==  document.getElementById(data).getAttribute('combat-append')) {
   blueMarshall.remove();
   ev.target.appendChild(document.getElementById(data));
+  ev.preventDefault();
   changeTurn();
   }
 }
