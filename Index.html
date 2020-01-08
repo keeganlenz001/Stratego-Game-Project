@@ -34,7 +34,7 @@
   <p>Scout; 9 (Can move as much as they want) (6x) <img  src="scout3.png" width="200" height="100"></div></p>
   <p>Flag: the target of the game; completely stationary and can’t perform actions. (1x)</p>
 
-<h3>Encounters can be triggered by a unit attacking another. The lower number between the units wins. If their numbers are equal, both units die. If the unit who started the encounter wins, they take the loser’s place. If the attacked unit wins, they stay in the same place and don’t move.</h3>
+<h3>Encounters can be triggered by a unit attacking another. The lower number between the units wins. If their numbers are equal, both units die. If the unit who started the encounter wins, they take the loser’s place. If the attacked unit wins, they stay in the same place and don’t move. If your unit dies, place the unit in the large box according to your color.</h3>
 
 
 <h6>
@@ -384,12 +384,12 @@ document.body.style.webkitTransform =  scale;
 
 
 
-
+// shows that you can drop
 function allowDrop(ev) {
   ev.preventDefault();
 }
 
-
+// this function will allow you to drag the pieces
 function drag(ev) {
   ev.dataTransfer.setData("Text", ev.target.id);
 }
@@ -404,6 +404,7 @@ function drop(ev) {
   }
   if ( ev.target.getAttribute('data-boxtype') ==  document.getElementById(data).getAttribute('data-appendto2')) {
   ev.target.appendChild(document.getElementById(data));
+  changeTurn();
   }
   if ( ev.target.getAttribute('data-boxtype') ==  document.getElementById(data).getAttribute('data-appendto3')) {
   ev.target.appendChild(document.getElementById(data));
