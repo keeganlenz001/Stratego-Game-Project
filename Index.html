@@ -8,6 +8,7 @@
   <body>
 
 
+<!-- instructions -->
 <h1>Intellectual Warfare by Spencer Folsom and Keegan Lenz</h1>
 
 <h3>Objective: Capture the openents flag</h3>
@@ -38,7 +39,7 @@
 
 <h6>
 
-
+  <!-- all blue pieces and piece information -->
   <img id="blueMarshal" src="marshall3.png" draggable="false" ondragstart="drag(event)" data-appendto="land" data-appendto2="blueLand" data-boxtype="blueMarshall" width="80" height="80" ></div>
 
   <img id="blueGeneral" src="general.png" draggable="false" ondragstart="drag(event)" data-appendto="land" data-appendto2="blueLand" data-boxtype="blueGeneral" width="80" height="80" ></div>
@@ -87,6 +88,7 @@
 
 <br>
 
+<!-- the entire board -->
 <div class="chessboard">
 
 <!-- row 1 -->
@@ -231,7 +233,7 @@
 
 <h4>
 
-
+  <!-- all red pieces and piece information -->
   <img  id="redMarshall" src="marshall3.png" draggable="true" ondragstart="drag(event)" data-appendto="land" data-appendto2="redLand" data-boxtype="redMarshall" width="80" height="80"></div>
 
   <img id="redGeneral"  src="general.png" draggable="true" ondragstart="drag(event)" data-appendto="land" data-appendto2="redLand" data-boxtype="redGeneral" width="80" height="80"></div>
@@ -272,25 +274,28 @@
 
 </h4>
 
+<!-- the box that indicates whose turn it's -->
 <div class="turn">
     <img id="turnButton" src="pic_red.png" width="150" height="150">
     <h5>Color Of Square = Player's Turn</h5>
     </div>
 
-
+    <!-- graveyards -->
     <div class="deadBlue" ondrop="drop(event)" ondragover="allowDrop(event)" data-boxtype="blueLand"></div>
     <div class="deadRed" ondrop="drop(event)" ondragover="allowDrop(event)" data-boxtype="redLand"></div>
 
 
-    <button onclick="removeBlueMarshall()">click here</button> 
+    <!-- <button onclick="removeBlueMarshall()">click here</button>  -->
 
 
 <script>
 
-function removeBlueMarshall(){
-  blueMarshall.remove();
-}
+// function removeBlueMarshall(){
+//   blueMarshall.remove();
+// }
 
+
+// zooms chrome out since the board is big
 document.body.style.zoom = .7
 
 var scale = 'scale(1)';
@@ -298,7 +303,7 @@ document.body.style.webkitTransform =  scale;
 
 
 
-
+// definition of all pieces
   var blueMarshall = document.getElementById('blueMarshal')
 
   var blueGeneral = document.getElementById('blueGeneral')
@@ -389,7 +394,7 @@ function drag(ev) {
   ev.dataTransfer.setData("Text", ev.target.id);
 }
 
-
+// this function will move the pieces, and it also filters certain drop areas for certain pieces
 function drop(ev) {
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
@@ -423,7 +428,7 @@ function drop(ev) {
 // }
 
 
-
+// function that changes turns
 function changeTurn() {
   var image = document.getElementById('turnButton');
   if (image.src.match("blue")) {
@@ -594,12 +599,12 @@ function changeTurn() {
 }
 
 
-
+// if ANY piece is dropped on blue flag, then blue looses
 function blueWins() {
   alert("Blue Wins!\nCLICK 'OK' TO START A NEW GAME");
   location.reload();
 }
-
+// if ANY piece is dropped on red flag, then red looses
 function redWins() {
   alert("Red Wins!\nCLICK 'OK' TO START A NEW GAME");
   location.reload();
