@@ -98,7 +98,7 @@
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)" data-boxtype="land"></div>
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)" data-boxtype="land"></div>
 
-<div class="blueFlag"ondrop="drop(redWins())" ondragover="allowDrop(event)">BLUE FLAG</div>
+<div class="blueFlag"ondrop="drop(redWins())" ondragover="allowDrop(event)" data-boxtype="redLand">BLUE FLAG</div>
 
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)" data-boxtype="land"></div>
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)" data-boxtype="land"></div>
@@ -218,7 +218,7 @@
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)" data-boxtype="land"></div>
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)" data-boxtype="land"></div>
 
-<div class="redFlag"ondrop="drop(blueWins())" ondragover="allowDrop(event)">RED FLAG</div>
+<div class="redFlag"ondrop="drop(blueWins())" ondragover="allowDrop(event)" data-boxtype="blueLand">RED FLAG</div>
 
 <div class="black"ondrop="drop(event)" ondragover="allowDrop(event)" data-boxtype="land"></div>
 <div class="white"ondrop="drop(event)" ondragover="allowDrop(event)" data-boxtype="land"></div>
@@ -602,15 +602,19 @@ function changeTurn() {
 }
 
 
-// if ANY piece is dropped on blue flag, then blue looses
+// if red piece is dropped on blue flag, then blue looses
 function blueWins() {
-  alert("Blue Wins!\nCLICK 'OK' TO START A NEW GAME");
-  location.reload();
+  if ( ev.target.getAttribute('data-boxtype') ==  document.getElementById(data).getAttribute('data-appendto4')){ 
+    alert("Blue Wins!\nCLICK 'OK' TO START A NEW GAME");
+    location.reload();
+  }
 }
-// if ANY piece is dropped on red flag, then red looses
+// if blue piece is dropped on red flag, then red looses
 function redWins() {
-  alert("Red Wins!\nCLICK 'OK' TO START A NEW GAME");
-  location.reload();
+  if ( ev.target.getAttribute('data-boxtype') ==  document.getElementById(data).getAttribute('data-appendto4')){ 
+    alert("Red Wins!\nCLICK 'OK' TO START A NEW GAME");
+    location.reload();
+  }
 }
 //
 </script>
