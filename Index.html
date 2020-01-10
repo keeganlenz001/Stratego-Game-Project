@@ -40,7 +40,7 @@
 <h6>
 
   <!-- all blue pieces and piece information -->
-  <img id="blueMarshal" src="marshall3.png" draggable="false" ondragstart="drag(event)" data-appendto="land" data-appendto2="blueLand" data-appendto4="redPiece" data-boxtype="bluePiece" width="80" height="80" ></div>
+  <img id="blueMarshal" src="marshall3.png" draggable="false" ondragstart="drag(event)" data-appendto="land" data-appendto2="blueLand" data-appendto4="redPiece" data-boxtype="bluePiece" combat-boxtype="blueMarshall" width="80" height="80" ></div>
 
   <img id="blueGeneral" src="general.png" draggable="false" ondragstart="drag(event)" data-appendto="land" data-appendto2="blueLand" data-appendto4="redPiece" data-boxtype="bluePiece" width="80" height="80" ></div>
 
@@ -234,7 +234,7 @@
 <h4>
 
   <!-- all red pieces and piece information -->
-  <img  id="redMarshall" src="marshall3.png" draggable="true" ondragstart="drag(event)" data-appendto="land" data-appendto2="redLand" data-appendto4="bluePiece" data-boxtype="redPiece" width="80" height="80"></div>
+  <img  id="redMarshall" src="marshall3.png" draggable="true" ondragstart="drag(event)" data-appendto="land" data-appendto2="redLand" data-appendto4="bluePiece" data-boxtype="redPiece" combat-append="blueMarshall" width="80" height="80"></div>
 
   <img id="redGeneral"  src="general.png" draggable="true" ondragstart="drag(event)" data-appendto="land" data-appendto2="redLand" data-appendto4="bluePiece" data-boxtype="redPiece" width="80" height="80"></div>
 
@@ -412,21 +412,14 @@ function drop(ev) {
   if ( ev.target.getAttribute('data-boxtype') ==  document.getElementById(data).getAttribute('data-appendto4')) {
   changeTurn();
   }
+  //first attempts at combat system
+  // if ( ev.target.getAttribute('combat-boxtype') ==  document.getElementById(data).getAttribute('combat-append')) {
+  // blueMarshall.remove();
+  // }
 }
 
 
 // function capturePieces(){
-
-
-// function combat() {
-//   if ( ev.target.getAttribute('combat-boxtype') ==  document.getElementById(data).getAttribute('combat-append')) {
-//   blueMarshall.remove();
-//   ev.target.appendChild(document.getElementById(data));
-//   ev.preventDefault();
-//   changeTurn();
-//   }
-// }
-  
 
 // }
 
