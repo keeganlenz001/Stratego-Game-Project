@@ -401,18 +401,18 @@ function drop(ev) {
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
   if(ev.target.getAttribute('data-boxtype') ==  document.getElementById(data).getAttribute('data-appendto')){
-  ev.target.appendChild(document.getElementById(data));
-  changeTurn();
+    ev.target.appendChild(document.getElementById(data));
+    changeTurn();
   }
   if ( ev.target.getAttribute('data-boxtype') ==  document.getElementById(data).getAttribute('data-appendto2')) {
-  ev.target.appendChild(document.getElementById(data));
+    ev.target.appendChild(document.getElementById(data));
   }
   if ( ev.target.getAttribute('data-boxtype') ==  document.getElementById(data).getAttribute('data-appendto3')) {
-  ev.target.appendChild(document.getElementById(data));
-  changeTurn();
+    ev.target.appendChild(document.getElementById(data));
+    changeTurn();
   }
   if ( ev.target.getAttribute('data-boxtype') ==  document.getElementById(data).getAttribute('data-appendto4')) {
-  changeTurn();
+    changeTurn();
   }
   //first attempts at combat system
   // if ( ev.target.getAttribute('combat-boxtype') ==  document.getElementById(data).getAttribute('combat-append')) {
