@@ -23,15 +23,15 @@
 
 <h3>The (x) signifies the number of pieces, while the number after the semi-colon determines the attack power.</h3>
 
-  <p>Marshal; 1 (1x) <img  src="marshall3.png" width="100" height="100"></div></p>
-  <p>General; 2 (1x) <img  src="general.png" width="100" height="100"></div></p>
-  <p>Colonel; 3 (2x) <img  src="Colonel 3.png" width="100" height="100"></div></p>
-  <p>Major; 4 (2x) <img  src="Major.png" width="100" height="100"></div></p> 
-  <p>Captain; 5 (Has a boat that crosses water) (4x) <img  src="wheel.png" width="100" height="100"></div></p>
-  <p>Lieutenant; 6 (Can move 2 spaces and attack on same turn) (4x) <img  src="spear4.png" width="200" height="200"></div></p>
-  <p>Sergeant; 7 (Decreases the level of Marshal by 1 on attack. This porcess can only be done once.) (4x) <img  src="sergeant2.png" width="100" height="100"></div></p>
-  <p>Miner; 8 (5x) <img  src="miner2.png" width="150" height="125"></div></p>
-  <p>Scout; 9 (Can move as much as they want) (6x) <img  src="scout3.png" width="200" height="100"></div></p>
+  <p>Marshal; 1 (1x) <img id="marshall"  src="marshall3.png" width="100" height="100"></div></p>
+  <p>General; 2 (1x) <img id="general" src="general.png" width="100" height="100"></div></p>
+  <p>Colonel; 3 (2x) <img id="colonel" src="Colonel 3.png" width="100" height="100"></div></p>
+  <p>Major; 4 (2x) <img id="major" src="Major.png" width="100" height="100"></div></p> 
+  <p>Captain; 5 (Has a boat that crosses water) (4x) <img id="captain" src="wheel.png" width="100" height="100"></div></p>
+  <p>Lieutenant; 6 (Can move 2 spaces and attack on same turn) (4x) <img id="lieutenant" src="spear4.png" width="200" height="200"></div></p>
+  <p>Sergeant; 7 (Decreases the level of Marshal by 1 on attack. This porcess can only be done once.) (4x) <img id="sergeant" src="sergeant2.png" width="100" height="100"></div></p>
+  <p>Miner; 8 (5x) <img id="miner" src="miner2.png" width="150" height="125"></div></p>
+  <p>Scout; 9 (Can move as much as they want) (6x) <img id="scout" src="scout3.png" width="200" height="100"></div></p>
   <p>Flag: the target of the game; completely stationary and can’t perform actions. (1x)</p>
 
 <h3>Encounters can be triggered by a unit attacking another. The lower number between the units wins. If their numbers are equal, both units die. You cannot attack and move in the same turn. If your unit dies, place the unit in the large box according to your color.</h3>
@@ -305,7 +305,16 @@ document.body.style.zoom = .7
 var scale = 'scale(1)';
 document.body.style.webkitTransform =  scale; 
 
-
+//makes it so you cant drag the instructional images
+  document.getElementById('marshall').setAttribute('draggable', false);
+  document.getElementById('general').setAttribute('draggable', false);
+  document.getElementById('colonel').setAttribute('draggable', false);
+  document.getElementById('major').setAttribute('draggable', false);
+  document.getElementById('captain').setAttribute('draggable', false);
+  document.getElementById('lieutenant').setAttribute('draggable', false);
+  document.getElementById('sergeant').setAttribute('draggable', false);
+  document.getElementById('miner').setAttribute('draggable', false);
+  document.getElementById('scout').setAttribute('draggable', false);
 
 // definition of all pieces
   var blueMarshall = document.getElementById('blueMarshal')
@@ -624,6 +633,7 @@ body {
   font-weight: 300;
   text-align: left;
   background-color: rgb(200,200,200);
+  user-select: none;
 }
 
 h1 {
@@ -633,6 +643,7 @@ h1 {
   font-size: 50px;
   background-color: rgb(100,100,100);
   color: rgb(225,225,225);
+  user-select: none;
 }
 
 h2 {
@@ -642,6 +653,7 @@ h2 {
   font-size: 25px;
   background-color: #444;
   color: rgb(225,225,225);
+  user-select: none;
 }
 
 h6 {
