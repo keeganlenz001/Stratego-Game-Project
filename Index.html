@@ -294,12 +294,12 @@
     <div class="deadBlue" ondrop="drop(event)" ondragover="allowDrop(event)" data-boxtype="blueLand"></div>
     <div class="deadRed" ondrop="drop(event)" ondragover="allowDrop(event)" data-boxtype="redLand"></div>
 
-
+    <!-- testing for the removal of pieces -->
     <!-- <button onclick="removeBlueMarshall()">click here</button>  -->
 
 
 <script>
-
+// testing for the removal of pieces
 // function removeBlueMarshall(){
 //   blueMarshall.remove();
 // }
@@ -459,6 +459,7 @@ function drop(ev) {
 
 // function that changes turns
 function changeTurn() {
+  // this is essentially a binary on and off switch for all piece's dragability
   var image = document.getElementById('turnButton');
   if (image.src.match("blue")) {
     
